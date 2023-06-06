@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8DEAFBA1-E267-465A-8D88-F50CA5496AC4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Presentacion</RootNamespace>
+    <AssemblyName>Presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Formularios\FrmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmClientes.Designer.cs">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmConductores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmConductores.Designer.cs">
+      <DependentUpon>FrmConductores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmListarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmListarClientes.Designer.cs">
+      <DependentUpon>FrmListarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmListarConductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmListarConductor.Designer.cs">
+      <DependentUpon>FrmListarConductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmServicios.Designer.cs">
+      <DependentUpon>FrmServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmVehiculos.Designer.cs">
+      <DependentUpon>FrmVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\DataSet\DataSetMaestro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMaestro.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Formularios\FrmReporteClientesActivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Formularios\FrmReporteClientesActivos.Designer.cs">
+      <DependentUpon>FrmReporteClientesActivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Formularios\FrmReporteConductoresActivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Formularios\FrmReporteConductoresActivos.Designer.cs">
+      <DependentUpon>FrmReporteConductoresActivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Formularios\FrmReporteServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Formularios\FrmReporteServicios.Designer.cs">
+      <DependentUpon>FrmReporteServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Formularios\FrmReporteUsuariosActivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Formularios\FrmReporteUsuariosActivos.Designer.cs">
+      <DependentUpon>FrmReporteUsuariosActivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Formularios\FrmReporteVehiculosActivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Formularios\FrmReporteVehiculosActivos.Designer.cs">
+      <DependentUpon>FrmReporteVehiculosActivos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Formularios\FrmClientes.resx">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmConductores.resx">
+      <DependentUpon>FrmConductores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmListarClientes.resx">
+      <DependentUpon>FrmListarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmListarConductor.resx">
+      <DependentUpon>FrmListarConductor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmServicios.resx">
+      <DependentUpon>FrmServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmVehiculos.resx">
+      <DependentUpon>FrmVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reportes\Formularios\FrmReporteClientesActivos.resx">
+      <DependentUpon>FrmReporteClientesActivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Formularios\FrmReporteConductoresActivos.resx">
+      <DependentUpon>FrmReporteConductoresActivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Formularios\FrmReporteServicios.resx">
+      <DependentUpon>FrmReporteServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Formularios\FrmReporteUsuariosActivos.resx">
+      <DependentUpon>FrmReporteUsuariosActivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Formularios\FrmReporteVehiculosActivos.resx">
+      <DependentUpon>FrmReporteVehiculosActivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Informe\InformeClientesActivos.rdlc" />
+    <EmbeddedResource Include="Reportes\Informe\InformeConductoresActivos.rdlc" />
+    <EmbeddedResource Include="Reportes\Informe\InformeServicios.rdlc" />
+    <EmbeddedResource Include="Reportes\Informe\InformeUsuariosActivos.rdlc" />
+    <EmbeddedResource Include="Reportes\Informe\InformeVehiculosActivos.rdlc" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reportes\DataSet\DataSetMaestro.xsc">
+      <DependentUpon>DataSetMaestro.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DataSetMaestro.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMaestro.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSet\DataSetMaestro.xss">
+      <DependentUpon>DataSetMaestro.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidad\Entidad.csproj">
+      <Project>{32be151c-2b13-4002-8be6-56ae82fb47a0}</Project>
+      <Name>Entidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logica\Logica.csproj">
+      <Project>{4e6488d2-d8e1-4115-9312-fd4c735f2c03}</Project>
+      <Name>Logica</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\conductor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\servicio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\taxi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\usuario.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

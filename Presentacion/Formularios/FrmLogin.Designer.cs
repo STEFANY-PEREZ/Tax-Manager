@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.buttonIngresar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -45,7 +46,7 @@
             this.buttonIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonIngresar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIngresar.ForeColor = System.Drawing.Color.White;
-            this.buttonIngresar.Location = new System.Drawing.Point(12, 179);
+            this.buttonIngresar.Location = new System.Drawing.Point(63, 178);
             this.buttonIngresar.Name = "buttonIngresar";
             this.buttonIngresar.Size = new System.Drawing.Size(197, 30);
             this.buttonIngresar.TabIndex = 32;
@@ -59,9 +60,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(36, 26);
+            this.label1.Location = new System.Drawing.Point(87, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 24);
+            this.label1.Size = new System.Drawing.Size(206, 35);
             this.label1.TabIndex = 33;
             this.label1.Text = "Iniciar sesión";
             // 
@@ -72,20 +73,21 @@
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtUsuario.ForeColor = System.Drawing.Color.Black;
-            this.txtUsuario.Location = new System.Drawing.Point(12, 85);
+            this.txtUsuario.Location = new System.Drawing.Point(63, 85);
             this.txtUsuario.MaxLength = 15;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(197, 23);
+            this.txtUsuario.Size = new System.Drawing.Size(197, 30);
             this.txtUsuario.TabIndex = 28;
+            this.txtUsuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUsuario_KeyUp);
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(9, 66);
+            this.label3.Location = new System.Drawing.Point(60, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.Size = new System.Drawing.Size(82, 23);
             this.label3.TabIndex = 30;
             this.label3.Text = "Usuario:";
             // 
@@ -94,9 +96,9 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(9, 121);
+            this.label5.Location = new System.Drawing.Point(60, 121);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 16);
+            this.label5.Size = new System.Drawing.Size(118, 23);
             this.label5.TabIndex = 31;
             this.label5.Text = "Contraseña:";
             // 
@@ -107,18 +109,19 @@
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContraseña.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtContraseña.ForeColor = System.Drawing.Color.Black;
-            this.txtContraseña.Location = new System.Drawing.Point(12, 140);
+            this.txtContraseña.Location = new System.Drawing.Point(63, 140);
             this.txtContraseña.MaxLength = 15;
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(197, 23);
+            this.txtContraseña.Size = new System.Drawing.Size(197, 30);
             this.txtContraseña.TabIndex = 29;
             this.txtContraseña.UseSystemPasswordChar = true;
+            this.txtContraseña.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtContraseña_KeyUp);
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(221, 235);
+            this.ClientSize = new System.Drawing.Size(323, 256);
             this.Controls.Add(this.buttonIngresar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsuario);
@@ -126,10 +129,11 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtContraseña);
             this.Font = new System.Drawing.Font("Arial", 10F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Tax-Services";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

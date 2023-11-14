@@ -2,6 +2,7 @@
 using Logica.Servicios;
 using System;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace Presentacion.Formularios
@@ -72,6 +73,21 @@ namespace Presentacion.Formularios
             e.Cancel = (dialogResult == DialogResult.No);
 
             if (!e.Cancel) { Application.Exit(); }
+        }
+        private void txtUsuario_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
+            {
+                buttonIngresar_Click(sender, e); // Llama al evento del botón "Ingresar" cuando se presiona "Enter".
+            }
+        }
+
+        private void txtContraseña_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
+            {
+                buttonIngresar_Click(sender, e); // Llama al evento del botón "Ingresar" cuando se presiona "Enter".
+            }
         }
     }
 }

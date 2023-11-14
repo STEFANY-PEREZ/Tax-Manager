@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.panelLateral = new System.Windows.Forms.Panel();
             this.usuarios = new System.Windows.Forms.Button();
             this.clientes = new System.Windows.Forms.Button();
@@ -35,12 +36,14 @@
             this.conductores = new System.Windows.Forms.Button();
             this.servicios = new System.Windows.Forms.Button();
             this.panelBase = new System.Windows.Forms.Panel();
+            this.viajes = new System.Windows.Forms.Button();
             this.panelLateral.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.Color.Orange;
+            this.panelLateral.Controls.Add(this.viajes);
             this.panelLateral.Controls.Add(this.usuarios);
             this.panelLateral.Controls.Add(this.clientes);
             this.panelLateral.Controls.Add(this.vehiculos);
@@ -161,19 +164,40 @@
             this.panelBase.Size = new System.Drawing.Size(859, 611);
             this.panelBase.TabIndex = 4;
             // 
+            // viajes
+            // 
+            this.viajes.BackColor = System.Drawing.Color.Orange;
+            this.viajes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.viajes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.viajes.FlatAppearance.BorderSize = 0;
+            this.viajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viajes.Font = new System.Drawing.Font("Arial", 8F);
+            this.viajes.ForeColor = System.Drawing.Color.Black;
+            this.viajes.Image = global::Presentacion.Properties.Resources.taxi;
+            this.viajes.Location = new System.Drawing.Point(0, 375);
+            this.viajes.Name = "viajes";
+            this.viajes.Size = new System.Drawing.Size(75, 75);
+            this.viajes.TabIndex = 6;
+            this.viajes.Text = "Viajes";
+            this.viajes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.viajes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.viajes.UseVisualStyleBackColor = false;
+            this.viajes.Click += new System.EventHandler(this.viajes_Click);
+            // 
             // FrmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 611);
             this.Controls.Add(this.panelBase);
             this.Controls.Add(this.panelLateral);
             this.Font = new System.Drawing.Font("Arial", 10F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(950, 650);
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmMenu";
+            this.Text = "Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenu_FormClosing);
             this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.panelLateral.ResumeLayout(false);
@@ -190,5 +214,6 @@
         private System.Windows.Forms.Button conductores;
         private System.Windows.Forms.Button servicios;
         private System.Windows.Forms.Panel panelBase;
+        private System.Windows.Forms.Button viajes;
     }
 }

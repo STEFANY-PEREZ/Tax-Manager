@@ -9,6 +9,8 @@ namespace Entidad
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Placa { get; set; }
+        public TipoVehiculo Tipo { get; set; }
+        public int Cupo { get; set; }
         public int Año { get; set; }
         public bool Estado { get; set; }
         public DateTime FechaCreacion { get; set; } = DateTime.Now;

@@ -40,7 +40,7 @@ namespace Presentacion.Formularios
 
         private void CambiarEstadoBotonesPrincipales(bool state, Button button)
         {
-            List<Button> buttons = new List<Button> {  servicios, conductores, vehiculos, clientes, usuarios };
+            List<Button> buttons = new List<Button> {  servicios, conductores, vehiculos, clientes, usuarios, viajes };
 
             if (buttons.Contains(button))
             {
@@ -97,7 +97,10 @@ namespace Presentacion.Formularios
         {
             AbrirModulo(new FrmUsuarios(), usuarios);
         }
-
+        private void viajes_Click(object sender, System.EventArgs e)
+        {
+            AbrirModulo(new FrmViajes(), viajes);
+        }
         private void FrmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.ApplicationExitCall) { return; }
@@ -108,6 +111,6 @@ namespace Presentacion.Formularios
             e.Cancel = (dialogResult == DialogResult.No);
 
             if (!e.Cancel) { Application.Exit(); }
-        }
+        }        
     }
 }

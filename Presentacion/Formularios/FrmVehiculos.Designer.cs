@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -68,9 +68,14 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtIdVehiculo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAño)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEliminar
@@ -128,14 +133,14 @@
             this.tabla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.tabla.BackgroundColor = System.Drawing.Color.Silver;
             this.tabla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_id_vehiculo,
@@ -152,26 +157,26 @@
             this.col_tipo_documento,
             this.col_telefono,
             this.col_direccion});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tabla.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tabla.DefaultCellStyle = dataGridViewCellStyle20;
             this.tabla.Location = new System.Drawing.Point(12, 126);
             this.tabla.Name = "tabla";
             this.tabla.ReadOnly = true;
             this.tabla.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(103)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(103)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.tabla.RowHeadersWidth = 20;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla.Size = new System.Drawing.Size(835, 377);
@@ -182,6 +187,7 @@
             // col_id_vehiculo
             // 
             this.col_id_vehiculo.HeaderText = "Id Vehiculo";
+            this.col_id_vehiculo.MinimumWidth = 8;
             this.col_id_vehiculo.Name = "col_id_vehiculo";
             this.col_id_vehiculo.ReadOnly = true;
             this.col_id_vehiculo.Visible = false;
@@ -189,6 +195,7 @@
             // col_id_conductor
             // 
             this.col_id_conductor.HeaderText = "Id Conductor";
+            this.col_id_conductor.MinimumWidth = 8;
             this.col_id_conductor.Name = "col_id_conductor";
             this.col_id_conductor.ReadOnly = true;
             this.col_id_conductor.Visible = false;
@@ -196,30 +203,35 @@
             // col_marca
             // 
             this.col_marca.HeaderText = "Marca";
+            this.col_marca.MinimumWidth = 8;
             this.col_marca.Name = "col_marca";
             this.col_marca.ReadOnly = true;
             // 
             // col_modelo
             // 
             this.col_modelo.HeaderText = "Modelo";
+            this.col_modelo.MinimumWidth = 8;
             this.col_modelo.Name = "col_modelo";
             this.col_modelo.ReadOnly = true;
             // 
             // col_placa
             // 
             this.col_placa.HeaderText = "Placa";
+            this.col_placa.MinimumWidth = 8;
             this.col_placa.Name = "col_placa";
             this.col_placa.ReadOnly = true;
             // 
             // col_año
             // 
             this.col_año.HeaderText = "Año";
+            this.col_año.MinimumWidth = 8;
             this.col_año.Name = "col_año";
             this.col_año.ReadOnly = true;
             // 
             // col_id_persona
             // 
             this.col_id_persona.HeaderText = "Id persona";
+            this.col_id_persona.MinimumWidth = 8;
             this.col_id_persona.Name = "col_id_persona";
             this.col_id_persona.ReadOnly = true;
             this.col_id_persona.Visible = false;
@@ -227,6 +239,7 @@
             // col_nombre
             // 
             this.col_nombre.HeaderText = "nombre";
+            this.col_nombre.MinimumWidth = 8;
             this.col_nombre.Name = "col_nombre";
             this.col_nombre.ReadOnly = true;
             this.col_nombre.Visible = false;
@@ -234,6 +247,7 @@
             // col_apellido
             // 
             this.col_apellido.HeaderText = "apellido";
+            this.col_apellido.MinimumWidth = 8;
             this.col_apellido.Name = "col_apellido";
             this.col_apellido.ReadOnly = true;
             this.col_apellido.Visible = false;
@@ -241,6 +255,7 @@
             // col_numero_documento
             // 
             this.col_numero_documento.HeaderText = "num doc";
+            this.col_numero_documento.MinimumWidth = 8;
             this.col_numero_documento.Name = "col_numero_documento";
             this.col_numero_documento.ReadOnly = true;
             this.col_numero_documento.Visible = false;
@@ -248,6 +263,7 @@
             // col_id_tipo_documento
             // 
             this.col_id_tipo_documento.HeaderText = "id tipo doc";
+            this.col_id_tipo_documento.MinimumWidth = 8;
             this.col_id_tipo_documento.Name = "col_id_tipo_documento";
             this.col_id_tipo_documento.ReadOnly = true;
             this.col_id_tipo_documento.Visible = false;
@@ -255,6 +271,7 @@
             // col_tipo_documento
             // 
             this.col_tipo_documento.HeaderText = "tipo doc";
+            this.col_tipo_documento.MinimumWidth = 8;
             this.col_tipo_documento.Name = "col_tipo_documento";
             this.col_tipo_documento.ReadOnly = true;
             this.col_tipo_documento.Visible = false;
@@ -262,6 +279,7 @@
             // col_telefono
             // 
             this.col_telefono.HeaderText = "tel";
+            this.col_telefono.MinimumWidth = 8;
             this.col_telefono.Name = "col_telefono";
             this.col_telefono.ReadOnly = true;
             this.col_telefono.Visible = false;
@@ -269,6 +287,7 @@
             // col_direccion
             // 
             this.col_direccion.HeaderText = "direc";
+            this.col_direccion.MinimumWidth = 8;
             this.col_direccion.Name = "col_direccion";
             this.col_direccion.ReadOnly = true;
             this.col_direccion.Visible = false;
@@ -297,7 +316,7 @@
             this.txtFiltro.Location = new System.Drawing.Point(12, 516);
             this.txtFiltro.MaxLength = 15;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(150, 23);
+            this.txtFiltro.Size = new System.Drawing.Size(150, 30);
             this.txtFiltro.TabIndex = 428;
             // 
             // label3
@@ -305,7 +324,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 16);
+            this.label3.Size = new System.Drawing.Size(72, 23);
             this.label3.TabIndex = 435;
             this.label3.Text = "Marca:";
             // 
@@ -314,7 +333,7 @@
             this.txtMarca.Location = new System.Drawing.Point(12, 56);
             this.txtMarca.MaxLength = 15;
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(120, 23);
+            this.txtMarca.Size = new System.Drawing.Size(120, 30);
             this.txtMarca.TabIndex = 434;
             // 
             // lblTitutloFormulario
@@ -324,7 +343,7 @@
             this.lblTitutloFormulario.ForeColor = System.Drawing.Color.Black;
             this.lblTitutloFormulario.Location = new System.Drawing.Point(12, 9);
             this.lblTitutloFormulario.Name = "lblTitutloFormulario";
-            this.lblTitutloFormulario.Size = new System.Drawing.Size(207, 24);
+            this.lblTitutloFormulario.Size = new System.Drawing.Size(311, 35);
             this.lblTitutloFormulario.TabIndex = 436;
             this.lblTitutloFormulario.Text = "Gestor de vehiculos:";
             // 
@@ -333,7 +352,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(135, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.Size = new System.Drawing.Size(81, 23);
             this.label1.TabIndex = 438;
             this.label1.Text = "Modelo:";
             // 
@@ -342,7 +361,7 @@
             this.txtModelo.Location = new System.Drawing.Point(138, 56);
             this.txtModelo.MaxLength = 15;
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(120, 23);
+            this.txtModelo.Size = new System.Drawing.Size(120, 30);
             this.txtModelo.TabIndex = 437;
             // 
             // numericAño
@@ -359,7 +378,7 @@
             0,
             0});
             this.numericAño.Name = "numericAño";
-            this.numericAño.Size = new System.Drawing.Size(59, 23);
+            this.numericAño.Size = new System.Drawing.Size(59, 30);
             this.numericAño.TabIndex = 439;
             this.numericAño.Value = new decimal(new int[] {
             1990,
@@ -372,7 +391,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(261, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 16);
+            this.label2.Size = new System.Drawing.Size(45, 23);
             this.label2.TabIndex = 440;
             this.label2.Text = "Año";
             // 
@@ -381,7 +400,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(326, 37);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 16);
+            this.label4.Size = new System.Drawing.Size(65, 23);
             this.label4.TabIndex = 442;
             this.label4.Text = "Placa:";
             // 
@@ -390,7 +409,7 @@
             this.txtPlaca.Location = new System.Drawing.Point(329, 56);
             this.txtPlaca.MaxLength = 15;
             this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(120, 23);
+            this.txtPlaca.Size = new System.Drawing.Size(120, 30);
             this.txtPlaca.TabIndex = 441;
             // 
             // groupBox2
@@ -433,7 +452,7 @@
             this.label7.ForeColor = System.Drawing.Color.DimGray;
             this.label7.Location = new System.Drawing.Point(5, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 16);
+            this.label7.Size = new System.Drawing.Size(171, 23);
             this.label7.TabIndex = 7;
             this.label7.Text = "Nombre completo:";
             // 
@@ -445,7 +464,7 @@
             this.txtNombreCompletoCliente.MaxLength = 15;
             this.txtNombreCompletoCliente.Name = "txtNombreCompletoCliente";
             this.txtNombreCompletoCliente.ReadOnly = true;
-            this.txtNombreCompletoCliente.Size = new System.Drawing.Size(284, 23);
+            this.txtNombreCompletoCliente.Size = new System.Drawing.Size(284, 30);
             this.txtNombreCompletoCliente.TabIndex = 6;
             // 
             // btnCancelar
@@ -509,17 +528,69 @@
             this.txtIdVehiculo.ForeColor = System.Drawing.Color.Black;
             this.txtIdVehiculo.Location = new System.Drawing.Point(12, 97);
             this.txtIdVehiculo.Name = "txtIdVehiculo";
-            this.txtIdVehiculo.Size = new System.Drawing.Size(22, 23);
+            this.txtIdVehiculo.Size = new System.Drawing.Size(22, 30);
             this.txtIdVehiculo.TabIndex = 447;
             this.txtIdVehiculo.Text = "0";
             this.txtIdVehiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIdVehiculo.Visible = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(59, 95);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 23);
+            this.label5.TabIndex = 449;
+            this.label5.Text = "Tipo:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(262, 95);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 23);
+            this.label6.TabIndex = 451;
+            this.label6.Text = "Cupo:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(105, 92);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 31);
+            this.comboBox1.TabIndex = 452;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(317, 92);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(59, 30);
+            this.numericUpDown1.TabIndex = 453;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // FrmVehiculos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 551);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtIdVehiculo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnLimpiar);
@@ -550,6 +621,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericAño)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -594,5 +666,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_tipo_documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_direccion;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

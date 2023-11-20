@@ -1,9 +1,9 @@
-﻿using Entidad;
-using System.Data.SqlClient;
-using System.Data;
+﻿using Datos.Conexiones;
+using Entidad;
 using System;
 using System.Collections.Generic;
-using Datos.Conexiones;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Datos.Repositorios
 {

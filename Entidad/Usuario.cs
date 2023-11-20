@@ -4,7 +4,7 @@ namespace Entidad
 {
     public class Usuario
     {
-        public int Id {get; set;}
+        public int Id { get; set; }
         public Persona Persona { get; set; }
         public Rol Rol { get; set; }
         public string Nombre { get; set; }

@@ -2,7 +2,7 @@
 
 namespace Entidad
 {
-    public class Cliente 
+    public class Cliente
     {
         public int Id { get; set; }
         public Persona Persona { get; set; }

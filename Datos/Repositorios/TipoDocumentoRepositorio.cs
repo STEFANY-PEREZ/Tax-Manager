@@ -37,7 +37,7 @@ namespace Datos.Repositorios
                 }
             }
 
-            return listaTiposDocumento; 
+            return listaTiposDocumento;
         }
     }
 }

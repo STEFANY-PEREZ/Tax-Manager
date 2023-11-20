@@ -1,5 +1,4 @@
-﻿using Entidad;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Presentacion

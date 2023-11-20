@@ -3,8 +3,8 @@ using Datos.Interfaces;
 using Entidad;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Datos.Repositorios
 {
@@ -211,7 +211,7 @@ namespace Datos.Repositorios
                                 tipoDocumento.Nombre = reader["TipoDocumento"].ToString();
                                 conductor.Persona = persona;
                                 conductor.Persona.TipoDocumento = tipoDocumento;
-                                
+
                                 listaConductores.Add(conductor);
                             }
                         }

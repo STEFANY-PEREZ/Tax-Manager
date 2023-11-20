@@ -1,10 +1,10 @@
-﻿using Datos.Interfaces;
+﻿using Datos.Conexiones;
+using Datos.Interfaces;
 using Entidad;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using Datos.Conexiones;
+using System.Data.SqlClient;
 
 namespace Datos.Repositorios
 {

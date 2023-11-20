@@ -144,9 +144,9 @@
 
         private System.Windows.Forms.Button buttonIngresar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUsuario;
+        public System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtContraseña;
+        public System.Windows.Forms.TextBox txtContraseña;
     }
 }

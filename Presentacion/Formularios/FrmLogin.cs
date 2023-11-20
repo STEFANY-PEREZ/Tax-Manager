@@ -2,7 +2,6 @@
 using Logica.Servicios;
 using System;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace Presentacion.Formularios
@@ -18,7 +17,7 @@ namespace Presentacion.Formularios
         {
             try
             {
-                Usuario usuario = new UsuarioServicio().Listar().Where(u => u.Nombre == txtUsuario.Text 
+                Usuario usuario = new UsuarioServicio().Listar().Where(u => u.Nombre == txtUsuario.Text
                         && u.Contraseña == txtContraseña.Text).FirstOrDefault();
 
                 if (txtUsuario.Text == "")
@@ -58,7 +57,7 @@ namespace Presentacion.Formularios
             }
         }
 
-        private void buttonIngresar_Click(object sender, EventArgs e)
+        public void buttonIngresar_Click(object sender, EventArgs e)
         {
             ValidarCredenciales();
         }
@@ -74,7 +73,7 @@ namespace Presentacion.Formularios
 
             if (!e.Cancel) { Application.Exit(); }
         }
-        private void txtUsuario_KeyUp(object sender, KeyEventArgs e)
+        public void txtUsuario_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
             {
@@ -82,12 +81,22 @@ namespace Presentacion.Formularios
             }
         }
 
-        private void txtContraseña_KeyUp(object sender, KeyEventArgs e)
+        public void txtContraseña_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
             {
                 buttonIngresar_Click(sender, e); // Llama al evento del botón "Ingresar" cuando se presiona "Enter".
             }
         }
+        //public string UsuarioText
+        //{
+        //    get { return txtUsuario.Text; }
+        //    set { txtUsuario.Text = value; }
+        //}
+        //public string ContraseñaText
+        //{
+        //    get { return txtContraseña.Text; }
+        //    set { txtContraseña.Text = value; }
+        //}
     }
 }

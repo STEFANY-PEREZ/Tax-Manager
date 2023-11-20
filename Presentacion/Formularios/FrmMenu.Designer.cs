@@ -30,30 +30,37 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.panelLateral = new System.Windows.Forms.Panel();
+            this.panelBase = new System.Windows.Forms.Panel();
             this.usuarios = new System.Windows.Forms.Button();
             this.clientes = new System.Windows.Forms.Button();
             this.vehiculos = new System.Windows.Forms.Button();
             this.conductores = new System.Windows.Forms.Button();
             this.servicios = new System.Windows.Forms.Button();
-            this.panelBase = new System.Windows.Forms.Panel();
-            this.viajes = new System.Windows.Forms.Button();
             this.panelLateral.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.Color.Orange;
-            this.panelLateral.Controls.Add(this.viajes);
             this.panelLateral.Controls.Add(this.usuarios);
-            this.panelLateral.Controls.Add(this.clientes);
             this.panelLateral.Controls.Add(this.vehiculos);
             this.panelLateral.Controls.Add(this.conductores);
             this.panelLateral.Controls.Add(this.servicios);
+            this.panelLateral.Controls.Add(this.clientes);
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(75, 611);
             this.panelLateral.TabIndex = 2;
+            // 
+            // panelBase
+            // 
+            this.panelBase.BackColor = System.Drawing.Color.White;
+            this.panelBase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBase.Location = new System.Drawing.Point(0, 0);
+            this.panelBase.Name = "panelBase";
+            this.panelBase.Size = new System.Drawing.Size(934, 611);
+            this.panelBase.TabIndex = 4;
             // 
             // usuarios
             // 
@@ -84,12 +91,12 @@
             this.clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clientes.Font = new System.Drawing.Font("Arial", 8F);
             this.clientes.ForeColor = System.Drawing.Color.Black;
-            this.clientes.Image = global::Presentacion.Properties.Resources.cliente;
-            this.clientes.Location = new System.Drawing.Point(0, 225);
+            this.clientes.Image = global::Presentacion.Properties.Resources.taxi;
+            this.clientes.Location = new System.Drawing.Point(0, 0);
             this.clientes.Name = "clientes";
             this.clientes.Size = new System.Drawing.Size(75, 75);
             this.clientes.TabIndex = 4;
-            this.clientes.Text = "Clientes";
+            this.clientes.Text = "Viajes";
             this.clientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.clientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.clientes.UseVisualStyleBackColor = false;
@@ -105,7 +112,7 @@
             this.vehiculos.Font = new System.Drawing.Font("Arial", 8F);
             this.vehiculos.ForeColor = System.Drawing.Color.Black;
             this.vehiculos.Image = global::Presentacion.Properties.Resources.taxi;
-            this.vehiculos.Location = new System.Drawing.Point(0, 150);
+            this.vehiculos.Location = new System.Drawing.Point(0, 225);
             this.vehiculos.Name = "vehiculos";
             this.vehiculos.Size = new System.Drawing.Size(75, 75);
             this.vehiculos.TabIndex = 3;
@@ -125,7 +132,7 @@
             this.conductores.Font = new System.Drawing.Font("Arial", 8F);
             this.conductores.ForeColor = System.Drawing.Color.Black;
             this.conductores.Image = global::Presentacion.Properties.Resources.conductor;
-            this.conductores.Location = new System.Drawing.Point(0, 75);
+            this.conductores.Location = new System.Drawing.Point(0, 150);
             this.conductores.Name = "conductores";
             this.conductores.Size = new System.Drawing.Size(75, 75);
             this.conductores.TabIndex = 2;
@@ -145,7 +152,7 @@
             this.servicios.Font = new System.Drawing.Font("Arial", 8F);
             this.servicios.ForeColor = System.Drawing.Color.Black;
             this.servicios.Image = global::Presentacion.Properties.Resources.servicio;
-            this.servicios.Location = new System.Drawing.Point(0, 0);
+            this.servicios.Location = new System.Drawing.Point(0, 75);
             this.servicios.Name = "servicios";
             this.servicios.Size = new System.Drawing.Size(75, 75);
             this.servicios.TabIndex = 1;
@@ -155,42 +162,13 @@
             this.servicios.UseVisualStyleBackColor = false;
             this.servicios.Click += new System.EventHandler(this.servicios_Click);
             // 
-            // panelBase
-            // 
-            this.panelBase.BackColor = System.Drawing.Color.White;
-            this.panelBase.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBase.Location = new System.Drawing.Point(75, 0);
-            this.panelBase.Name = "panelBase";
-            this.panelBase.Size = new System.Drawing.Size(859, 611);
-            this.panelBase.TabIndex = 4;
-            // 
-            // viajes
-            // 
-            this.viajes.BackColor = System.Drawing.Color.Orange;
-            this.viajes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.viajes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.viajes.FlatAppearance.BorderSize = 0;
-            this.viajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viajes.Font = new System.Drawing.Font("Arial", 8F);
-            this.viajes.ForeColor = System.Drawing.Color.Black;
-            this.viajes.Image = global::Presentacion.Properties.Resources.taxi;
-            this.viajes.Location = new System.Drawing.Point(0, 375);
-            this.viajes.Name = "viajes";
-            this.viajes.Size = new System.Drawing.Size(75, 75);
-            this.viajes.TabIndex = 6;
-            this.viajes.Text = "Viajes";
-            this.viajes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.viajes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.viajes.UseVisualStyleBackColor = false;
-            this.viajes.Click += new System.EventHandler(this.viajes_Click);
-            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 611);
-            this.Controls.Add(this.panelBase);
             this.Controls.Add(this.panelLateral);
+            this.Controls.Add(this.panelBase);
             this.Font = new System.Drawing.Font("Arial", 10F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -209,11 +187,10 @@
 
         private System.Windows.Forms.Panel panelLateral;
         private System.Windows.Forms.Button usuarios;
-        private System.Windows.Forms.Button clientes;
         private System.Windows.Forms.Button vehiculos;
         private System.Windows.Forms.Button conductores;
         private System.Windows.Forms.Button servicios;
         private System.Windows.Forms.Panel panelBase;
-        private System.Windows.Forms.Button viajes;
+        private System.Windows.Forms.Button clientes;
     }
 }

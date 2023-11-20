@@ -1,10 +1,10 @@
 ﻿using Entidad;
 using Logica.Servicios;
-using System.Collections.Generic;
-using System;
-using System.Windows.Forms;
-using System.Drawing;
 using Presentacion.Reportes.Formularios;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Presentacion.Formularios
 {
@@ -437,15 +437,15 @@ namespace Presentacion.Formularios
             };
         }
 
-        private void ValidarCampoNumerico(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Este campo solo admite números.", "Atención",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                e.Handled = true;
-            }
-        }
+        //private void ValidarCampoNumerico(object sender, KeyPressEventArgs e)
+        //{
+        //    if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+        //    {
+        //        MessageBox.Show("Este campo solo admite números.", "Atención",
+        //            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        e.Handled = true;
+        //    }
+        //}
 
         private void RestablecerColoresTextBox()
         {
@@ -528,6 +528,44 @@ namespace Presentacion.Formularios
         {
             txtFiltro.Clear();
             ListarUsuarios();
+        }
+
+        public bool ValidarCamposVacios(TextBox textBox)
+        {
+            TextBox[] textBoxes = { txtNombre, txtApellido, txtNumeroDocumento, txtTelefono, txtDireccion };
+            ComboBox[] comboBoxes = { boxTipoDocumento, boxRoles };
+
+            foreach (TextBox textBoxe in textBoxes)
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    MessageBox.Show($"El campo '{textBox.Name.Substring(3)}' está vacío.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox.Focus();
+                    return false;
+                }
+            }
+
+            foreach (ComboBox comboBox in comboBoxes)
+            {
+                if (comboBox.SelectedIndex == 0)
+                {
+                    MessageBox.Show($"Debe seleccionar un valor para el campo '{comboBox.Name.Substring(3)}'.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    comboBox.Focus();
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public void PruebaValidarCampoNumerico(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Este campo solo admite números.", "Atención",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+            }
         }
     }
 }

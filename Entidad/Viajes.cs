@@ -16,6 +16,5 @@ namespace Entidad
         public int CupoSolicitado { get; set; }
         public Encomienda Encomienda { get; set; }
         public bool Estado { get; set; }
-
     }
 }

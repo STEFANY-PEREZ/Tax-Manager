@@ -19,7 +19,6 @@ namespace Presentacion.Formularios
             InitializeComponent();
         }
 
-
         //Funciones
 
         private void Crear_Actualizar()

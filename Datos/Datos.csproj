@@ -54,6 +54,7 @@
     <Compile Include="Repositorios\TipoDocumentoRepositorio.cs" />
     <Compile Include="Repositorios\UsuarioRepositorio.cs" />
     <Compile Include="Repositorios\VehiculoRepositorio.cs" />
+    <Compile Include="Repositorios\ViajesRepositorio.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

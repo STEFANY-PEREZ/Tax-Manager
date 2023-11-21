@@ -161,6 +161,12 @@
     <Compile Include="Reportes\Formularios\FrmReporteVehiculosActivos.Designer.cs">
       <DependentUpon>FrmReporteVehiculosActivos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Formularios\FrmReporteViajesActivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Formularios\FrmReporteViajesActivos.Designer.cs">
+      <DependentUpon>FrmReporteViajesActivos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Formularios\FrmClientes.resx">
       <DependentUpon>FrmClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Formularios\FrmReporteVehiculosActivos.resx">
       <DependentUpon>FrmReporteVehiculosActivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Formularios\FrmReporteViajesActivos.resx">
+      <DependentUpon>FrmReporteViajesActivos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Informe\InformeClientesActivos.rdlc" />
     <EmbeddedResource Include="Reportes\Informe\InformeConductoresActivos.rdlc" />

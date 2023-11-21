@@ -50,6 +50,7 @@
     <Compile Include="Servicios\TipoDocumentoServicio.cs" />
     <Compile Include="Servicios\UsuarioServicio.cs" />
     <Compile Include="Servicios\VehiculoServicio.cs" />
+    <Compile Include="Servicios\ViajesServicio.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -35,6 +35,26 @@ namespace Presentacion.Formularios
             ListarUsuarios();
         }
 
+        private void ListarRoles()
+        {
+            try
+            {
+                List<Rol> roles = RolServicio.Listar();
+
+                // Agrega la opción "Seleccionar"
+                roles.Insert(0, new Rol { Id = 0, Nombre = "Seleccionar" });
+
+                // Asigna la lista al ComboBox
+                boxRoles.DataSource = roles;
+                boxRoles.DisplayMember = "Nombre";
+                boxRoles.ValueMember = "Id";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void ListarTiposDocumento()
         {
             try
@@ -268,25 +288,7 @@ namespace Presentacion.Formularios
             }
         }
 
-        private void ListarRoles()
-        {
-            try
-            {
-                List<Rol> roles = RolServicio.Listar();
-
-                // Agrega la opción "Seleccionar"
-                roles.Insert(0, new Rol { Id = 0, Nombre = "Seleccionar" });
-
-                // Asigna la lista al ComboBox
-                boxRoles.DataSource = roles;
-                boxRoles.DisplayMember = "Nombre";
-                boxRoles.ValueMember = "Id";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        
 
         private void LimpiarFormulario()
         {
@@ -532,6 +534,7 @@ namespace Presentacion.Formularios
 
         public bool ValidarCamposVacios(TextBox textBox)
         {
+
             TextBox[] textBoxes = { txtNombre, txtApellido, txtNumeroDocumento, txtTelefono, txtDireccion };
             ComboBox[] comboBoxes = { boxTipoDocumento, boxRoles };
 

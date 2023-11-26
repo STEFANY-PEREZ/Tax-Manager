@@ -72,6 +72,9 @@ namespace Datos.Repositorios
                     command.Parameters.AddWithValue("@Modelo", entidad.Modelo);
                     command.Parameters.AddWithValue("@Año", entidad.Año.ToString());
                     command.Parameters.AddWithValue("@Placa", entidad.Placa);
+                    command.Parameters.AddWithValue("@Tipo", entidad.TipoVehiculo.Nombre);
+                    command.Parameters.AddWithValue("@Cupo", entidad.Cupo.ToString());
+
 
                     SqlParameter resultadoParameter = new SqlParameter("@Resultado", SqlDbType.Int);
                     resultadoParameter.Direction = ParameterDirection.Output;
@@ -177,6 +180,8 @@ namespace Datos.Repositorios
                             vehiculo.Modelo = reader["Modelo"].ToString();
                             vehiculo.Placa = reader["Placa"].ToString();
                             vehiculo.Año = Convert.ToInt32(reader["Año"]);
+                            vehiculo.Tipo = reader["Tipo"].ToString();
+                            vehiculo.Cupo = Convert.ToInt32(reader["Cupo"]);
                             vehiculo.Estado = Convert.ToBoolean(reader["Estado"]);
                             vehiculo.FechaCreacion = Convert.ToDateTime(reader["FechaCreacionVehiculo"]);
 

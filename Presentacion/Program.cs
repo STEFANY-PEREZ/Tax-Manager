@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Presentacion.Formularios;
+using System;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -13,7 +14,7 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Formularios.FrmLogin());
+            Application.Run(new FrmLogin());
             //Usuario usuario = new Usuario();
             //Application.Run(new Formularios.FrmMenu(usuario));
         }

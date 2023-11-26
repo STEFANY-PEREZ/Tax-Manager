@@ -1,23 +1,49 @@
 ﻿using Entidad;
 using Logica.Servicios;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Presentacion.Formularios
 {
-    public partial class FrmViajes : Form
+    public partial class FrmEncomiendas : Form
     {
         private ViajesServicio ViajesServicio = new ViajesServicio();
-        Viajes Viajes = new Viajes();
+        private TipoEncomiendaServicio TipoEncomiendaServicio = new TipoEncomiendaServicio();
+
+        PedidoEncomienda Viajes = new PedidoEncomienda();
+        Conductor condutorElegido = new Conductor();
         int id = 0;
-        public FrmViajes()
+        public FrmEncomiendas()
         {
             InitializeComponent();
         }
-
+        
+        private void FrmViajes_Load(object sender, EventArgs e)
+        {
+            ListarTipoEncomiendas();
+            ListarViajes();
+        }
         //Funciones
+
+        private void ListarTipoEncomiendas()
+        {
+            try
+            {
+                List<TipoEncomiendas> tipoEncomiendas = TipoEncomiendaServicio.Listar();
+
+                tipoEncomiendas.Insert(0, new TipoEncomiendas { IdEncomienda = 0, Nombre = "Seleccionar" });
+
+                boxTipo.DataSource = tipoEncomiendas;
+                boxTipo.DisplayMember = "Nombre"; 
+                boxTipo.ValueMember = "IdEncomienda";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void Crear ()
         {
@@ -34,7 +60,7 @@ namespace Presentacion.Formularios
                             return;
                         }
 
-                        Capturar();
+                        CapturarViaje();
 
                         string mensaje;
 
@@ -42,7 +68,7 @@ namespace Presentacion.Formularios
 
                         if (resultado)
                         {
-                            MessageBox.Show($"Viaje con referencia '{Viajes.Id}' creado exitosamente.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"Viaje con referencia '{Viajes.IdViaje}' creado exitosamente.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             LimpiarFormulario();
                         }
@@ -110,7 +136,58 @@ namespace Presentacion.Formularios
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void ListarViajes()
+        {
+            try
+            {
+                tabla.Rows.Clear();
 
+                List<PedidoEncomienda> viajes = ViajesServicio.Listar();
+
+                foreach (PedidoEncomienda viaje in viajes)
+                {
+                    tabla.Rows.Add(new object[]
+                    {
+                        viaje.IdViaje,
+                        viaje.DireccionOrigen,
+                        viaje.Valor,
+                        viaje.DireccionDestino,
+                        viaje.Telefono,
+                        viaje.Estado,
+                        viaje.FechaCreacion,
+                        viaje.Conductor.Id,
+                        viaje.Vehiculo.Id,
+                        viaje.Tipo
+                    });
+                }
+                tabla.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void CapturarViaje()
+        {
+
+            TipoEncomiendas tipoEncomiendas = (TipoEncomiendas)boxTipo.SelectedItem;
+
+            Viajes.tipoEncomiendas = new TipoEncomiendas
+            {
+                IdEncomienda = tipoEncomiendas.IdEncomienda
+            };
+
+            Viajes.DireccionDestino = txtDireccionDestino.Text;
+            Viajes.DireccionOrigen = txtDireccionOrigen.Text;
+            Viajes.Telefono = txtTelefono.Text;
+            Viajes.Valor = Convert.ToDecimal(txtValor.Text);
+            Viajes.Contenido = txtContenido.Text;
+            Viajes.Tipo = boxTipo.Text;
+            //Viajes.Estado = 
+
+            // Asigna el TipoEncomiendas seleccionado
+            Viajes.tipoEncomiendas = tipoEncomiendas;
+        }
 
         private bool ValidarCamposVacios()
         {
@@ -127,14 +204,6 @@ namespace Presentacion.Formularios
             }
 
             return true;
-        }
-
-        private void Capturar()
-        {
-            Viajes.Id = Convert.ToInt32(txtIdUsuario.Text);
-            Viajes.DireccionDestino = txtDireccionDestino.Text;
-            Viajes.DireccionOrigen = txtDireccionOrigen.Text;
-            Viajes.Telefono = Convert.ToInt32(txtTelefono.Text);
         }
 
         private void LimpiarFormulario()
@@ -196,5 +265,7 @@ namespace Presentacion.Formularios
         {
             GenerarReporte(new Reportes.Formularios.FrmReporteViajesActivos());
         }
+
+        
     }
 }

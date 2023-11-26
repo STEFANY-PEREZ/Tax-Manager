@@ -10,6 +10,8 @@ namespace Presentacion.Formularios
     public partial class FrmVehiculos : Form
     {
         private VehiculoServicio VehiculoServicio = new VehiculoServicio();
+        private TipoVehiculoServicio TipoVehiculoServicio = new TipoVehiculoServicio();
+
         Conductor conductorElegido = new Conductor();
         Vehiculo Vehiculo = new Vehiculo();
         int id = 0;
@@ -17,9 +19,32 @@ namespace Presentacion.Formularios
         public FrmVehiculos()
         {
             InitializeComponent();
+            ListarVehiculos();
         }
 
         //Funciones
+        private void FrmVehiculos_Load(object sender, EventArgs e)
+        {
+            ListarTipoVehiculo();
+        }
+
+        private void ListarTipoVehiculo()
+        {
+            try
+            {
+                List<TipoVehiculo> tipoVehiculo = TipoVehiculoServicio.Listar();
+
+                tipoVehiculo.Insert(0, new TipoVehiculo { Id = 0, Nombre = "Seleccionar" });
+
+                boxTipo.DataSource = tipoVehiculo;
+                boxTipo.DisplayMember = "Nombre";
+                boxTipo.ValueMember = "Id";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void Crear_Actualizar()
         {
@@ -110,6 +135,13 @@ namespace Presentacion.Formularios
 
         private void Capturar()
         {
+            TipoVehiculo tipoVehiculo = (TipoVehiculo)boxTipo.SelectedItem;
+
+            Vehiculo.TipoVehiculo = new TipoVehiculo
+            {
+                Id = tipoVehiculo.Id
+            };
+
             Vehiculo.Conductor = new Conductor
             {
                 Id = conductorElegido.Id
@@ -120,7 +152,10 @@ namespace Presentacion.Formularios
             Vehiculo.Marca = txtMarca.Text;
             Vehiculo.Modelo = txtModelo.Text;
             Vehiculo.Año = (int)numericAño.Value;
+            Vehiculo.Cupo = (int)numericCupo.Value;
             Vehiculo.Placa = txtPlaca.Text;
+            Vehiculo.TipoVehiculo.Nombre = boxTipo.Text;
+
         }
 
         private void Eliminar()
@@ -188,20 +223,15 @@ namespace Presentacion.Formularios
                 {
                     tabla.Rows.Add(new object[]
                     {
-                vehiculo.Id,
-                vehiculo.Conductor.Id,
-                vehiculo.Marca,
-                vehiculo.Modelo,
-                vehiculo.Placa,
-                vehiculo.Año,
-                vehiculo.Conductor.Persona.Id,
-                vehiculo.Conductor.Persona.Nombre,
-                vehiculo.Conductor.Persona.Apellido,
-                vehiculo.Conductor.Persona.NumeroDocumento,
-                vehiculo.Conductor.Persona.TipoDocumento.Id,
-                vehiculo.Conductor.Persona.TipoDocumento.Nombre,
-                vehiculo.Conductor.Persona.Telefono,
-                vehiculo.Conductor.Persona.Direccion
+                        vehiculo.Id,
+                        vehiculo.Conductor.Id,
+                        vehiculo.Marca,
+                        vehiculo.Modelo,
+                        vehiculo.Placa,
+                        vehiculo.Año,
+                        vehiculo.Tipo,
+                        vehiculo.Cupo
+                        
                     });
                 }
 
@@ -257,7 +287,7 @@ namespace Presentacion.Formularios
                         Direccion = tabla.CurrentRow.Cells["col_direccion"].Value?.ToString()
                     }
                 };
-
+                
                 Vehiculo = new Vehiculo
                 {
                     Id = this.id,
@@ -265,6 +295,8 @@ namespace Presentacion.Formularios
                     Modelo = tabla.CurrentRow.Cells["col_modelo"].Value?.ToString(),
                     Placa = tabla.CurrentRow.Cells["col_placa"].Value?.ToString(),
                     Año = Convert.ToInt32(tabla.CurrentRow.Cells["col_año"].Value),
+                    Cupo = Convert.ToInt32(tabla.CurrentRow.Cells["col_cupo"].Value),
+                    Tipo = tabla.CurrentRow.Cells["col_tipovehiculo"].Value?.ToString(),
                     Conductor = conductor
                 };
 
@@ -394,10 +426,7 @@ namespace Presentacion.Formularios
             ConsultarConductor();
         }
 
-        private void FrmVehiculos_Load(object sender, EventArgs e)
-        {
-            ListarVehiculos();
-        }
+        
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {

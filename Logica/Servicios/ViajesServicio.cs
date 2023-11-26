@@ -11,12 +11,12 @@ namespace Logica.Servicios
     public class ViajesServicio
     {
         private ViajesRepositorio viajesRepositorio = new ViajesRepositorio();
-        public bool Crear(Viajes viajes, out string mensaje)
+        public bool Crear(PedidoEncomienda viajes, out string mensaje)
         {
             return viajesRepositorio.Crear(viajes, out mensaje);
         }
 
-        public bool Actualizar(Viajes viajes, out string mensaje)
+        public bool Actualizar(PedidoEncomienda viajes, out string mensaje)
         {
             return viajesRepositorio.Actualizar(viajes, out mensaje);
         }
@@ -25,11 +25,10 @@ namespace Logica.Servicios
         {
             return viajesRepositorio.Eliminar(id, out mensaje);
         }
-        
-        public List<Viajes> listar()
+
+        public List<PedidoEncomienda> Listar()
         {
             return viajesRepositorio.Listar();
         }
-
     }
 }

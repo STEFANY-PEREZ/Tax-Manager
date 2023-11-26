@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace Datos.Repositorios
 {
-    public class ViajesRepositorio : IRepositorioGenerico<Viajes>
+    public class ViajesRepositorio : IRepositorioGenerico<PedidoEncomienda>
     {
-        public bool Crear(Viajes entidad, out string mensaje)
+        public bool Crear(PedidoEncomienda entidad, out string mensaje)
         {
             bool resultado = false;
             mensaje = "";
@@ -23,41 +23,34 @@ namespace Datos.Repositorios
             {
                 using (SqlConnection connection = new SqlConnection(Conexion.CadenaConexionMaestra))
                 {
-                    SqlCommand command = new SqlCommand("CrearViajes", connection);
+                    connection.Open();
+
+                    SqlCommand command = new SqlCommand("CrearPedidoEncomienda", connection);
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.AddWithValue("@IdViajes", entidad.Id);
-                    command.Parameters.AddWithValue("Conductor", entidad.Conductor);
-                    command.Parameters.AddWithValue("@DirrecionOrigen", entidad.DireccionOrigen);
-                    command.Parameters.AddWithValue("@DIreccionDestino", entidad.DireccionDestino);
-                    command.Parameters.AddWithValue("@Telefono", entidad.Telefono.ToString());
-                    command.Parameters.AddWithValue("@CupoSolicitado", entidad.CupoSolicitado.ToString());
-                    command.Parameters.AddWithValue("@Encomienda", entidad.Encomienda);
+                    command.Parameters.AddWithValue("@IdEncomienda", entidad.IdViaje);
+                    command.Parameters.AddWithValue("@DireccionOrigen", entidad.DireccionOrigen);
+                    command.Parameters.AddWithValue("@DireccionDestino", entidad.DireccionDestino);
+                    command.Parameters.AddWithValue("@Telefono", entidad.Telefono);
+                    command.Parameters.AddWithValue("@TipoEncomienda", entidad.Tipo);
+                    command.Parameters.AddWithValue("@Valor", entidad.Valor);
+                    command.Parameters.AddWithValue("@Contenido", entidad.Contenido);
+                    command.Parameters.AddWithValue("@FechaCreacion", entidad.FechaCreacion);
+                    command.Parameters.Add("@Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    command.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
-                    SqlParameter resultadoParameter = new SqlParameter("@Resultado", SqlDbType.Int);
-                    resultadoParameter.Direction = ParameterDirection.Output;
-                    command.Parameters.Add(resultadoParameter);
-
-                    SqlParameter mensajeParameter = new SqlParameter("@Mensaje", SqlDbType.VarChar, 500);
-                    mensajeParameter.Direction = ParameterDirection.Output;
-                    command.Parameters.Add(mensajeParameter);
-
-                    connection.Open();
                     command.ExecuteNonQuery();
 
                     int resultadoSP = Convert.ToInt32(command.Parameters["@Resultado"].Value);
-                    mensaje = command.Parameters["@Mensaje"].Value.ToString();
+                    mensaje = Convert.ToString(command.Parameters["@Mensaje"].Value);
 
-                    if (resultadoSP > 0)
-                        resultado = true;
+                    resultado = resultadoSP > 0;
                 }
             }
             catch (Exception ex)
             {
-                mensaje = "Error al Guardar el Viaje. Por favor, inténtelo nuevamente.";
-                throw ex;
+                mensaje = "Error al crear el usuario.\nDetalles: " + ex.Message;
             }
-
             return resultado;
         }
 
@@ -110,11 +103,73 @@ namespace Datos.Repositorios
             return exito;
         }
 
-        public List<Viajes> Listar()
+        public List<PedidoEncomienda> Listar()
         {
-            throw new NotImplementedException();
+            List<PedidoEncomienda > encomiendas = new List<PedidoEncomienda>();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Conexion.CadenaConexionMaestra))
+                {
+                    string query = "SELECT * FROM VistaPedidoEncomiendasActivas";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.CommandType = CommandType.Text;
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            PedidoEncomienda encomienda = new PedidoEncomienda();
+                            encomienda.IdViaje = Convert.ToInt32(reader["IdVehiculo"]);
+                            encomienda.DireccionOrigen = reader["DireccionOrigen"].ToString();
+                            encomienda.DireccionDestino = reader["DireccionDestino"].ToString();
+                            encomienda.Telefono = reader["Telefono"].ToString();
+                            encomienda.Tipo = reader["Tipo"].ToString();
+                            encomienda.Valor = Convert.ToDecimal(reader["Valor"]);
+                            encomienda.Estado = Convert.ToBoolean(reader["Estado"]);
+                            encomienda.Contenido = reader["Contenido"].ToString();
+                            encomienda.FechaCreacion = Convert.ToDateTime(reader["FechaCreacionVehiculo"]);
+
+                            Conductor conductor = new Conductor();
+                            conductor.Id = Convert.ToInt32(reader["IdConductor"]);
+                            conductor.Estado = Convert.ToBoolean(reader["Estado"]);
+                            //conductor.FechaCreacion = Convert.ToDateTime(reader["FechaCreacion"]);
+
+                            Persona persona = new Persona();
+                            persona.Id = Convert.ToInt32(reader["IdPersona"]);
+                            persona.Nombre = reader["Nombre"].ToString();
+                            persona.Apellido = reader["Apellido"].ToString();
+                            persona.NumeroDocumento = reader["NumeroDocumento"].ToString();
+                            persona.Telefono = reader["Telefono"].ToString();
+                            persona.Direccion = reader["Direccion"].ToString();
+                            persona.FechaCreacion = Convert.ToDateTime(reader["FechaCreacionPersona"]);
+
+                            TipoDocumento tipoDocumento = new TipoDocumento();
+                            tipoDocumento.Id = Convert.ToInt32(reader["IdTipoDocumento"]);
+                            tipoDocumento.Nombre = reader["TipoDocumento"].ToString();
+
+                            persona.TipoDocumento = tipoDocumento;
+                            conductor.Persona = persona;
+                            encomienda.Conductor = conductor;
+
+                            encomiendas.Add(encomienda);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                encomiendas = new List<PedidoEncomienda>();
+                throw ex;
+            }
+
+            return encomiendas;
+
         }
-        public bool Actualizar(Viajes entidad, out string mensaje)
+        public bool Actualizar(PedidoEncomienda entidad, out string mensaje)
         {
             throw new NotImplementedException();
         }

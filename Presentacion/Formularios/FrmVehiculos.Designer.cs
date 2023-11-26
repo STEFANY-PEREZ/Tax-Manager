@@ -35,20 +35,6 @@
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.tabla = new System.Windows.Forms.DataGridView();
-            this.col_id_vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_id_conductor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_año = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_id_persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_id_tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReporte = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,12 +56,28 @@
             this.txtIdVehiculo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.boxTipo = new System.Windows.Forms.ComboBox();
+            this.numericCupo = new System.Windows.Forms.NumericUpDown();
+            this.col_id_vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_id_conductor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_año = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tipovehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_id_persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_id_tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAño)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericCupo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEliminar
@@ -86,7 +88,7 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(671, 509);
+            this.btnEliminar.Location = new System.Drawing.Point(872, 613);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnEliminar.Size = new System.Drawing.Size(79, 30);
@@ -100,7 +102,7 @@
             // 
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestaurar.Location = new System.Drawing.Point(257, 515);
+            this.btnRestaurar.Location = new System.Drawing.Point(321, 620);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnRestaurar.Size = new System.Drawing.Size(136, 24);
@@ -113,7 +115,7 @@
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.Location = new System.Drawing.Point(167, 515);
+            this.btnBuscar.Location = new System.Drawing.Point(209, 620);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnBuscar.Size = new System.Drawing.Size(85, 25);
@@ -149,6 +151,8 @@
             this.col_modelo,
             this.col_placa,
             this.col_año,
+            this.col_tipovehiculo,
+            this.col_cupo,
             this.col_id_persona,
             this.col_nombre,
             this.col_apellido,
@@ -179,10 +183,300 @@
             this.tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.tabla.RowHeadersWidth = 20;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tabla.Size = new System.Drawing.Size(835, 377);
+            this.tabla.Size = new System.Drawing.Size(911, 417);
             this.tabla.TabIndex = 430;
             this.tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellClick);
             this.tabla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellDoubleClick);
+            // 
+            // btnReporte
+            // 
+            this.btnReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReporte.BackColor = System.Drawing.Color.Teal;
+            this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporte.FlatAppearance.BorderSize = 0;
+            this.btnReporte.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte.ForeColor = System.Drawing.Color.White;
+            this.btnReporte.Location = new System.Drawing.Point(978, 613);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.btnReporte.Size = new System.Drawing.Size(91, 30);
+            this.btnReporte.TabIndex = 429;
+            this.btnReporte.Text = "Reporte";
+            this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtFiltro.Location = new System.Drawing.Point(15, 621);
+            this.txtFiltro.MaxLength = 15;
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(150, 27);
+            this.txtFiltro.TabIndex = 428;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 19);
+            this.label3.TabIndex = 435;
+            this.label3.Text = "Marca:";
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(12, 56);
+            this.txtMarca.MaxLength = 15;
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(120, 27);
+            this.txtMarca.TabIndex = 434;
+            // 
+            // lblTitutloFormulario
+            // 
+            this.lblTitutloFormulario.AutoSize = true;
+            this.lblTitutloFormulario.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            this.lblTitutloFormulario.ForeColor = System.Drawing.Color.Black;
+            this.lblTitutloFormulario.Location = new System.Drawing.Point(12, 9);
+            this.lblTitutloFormulario.Name = "lblTitutloFormulario";
+            this.lblTitutloFormulario.Size = new System.Drawing.Size(259, 30);
+            this.lblTitutloFormulario.TabIndex = 436;
+            this.lblTitutloFormulario.Text = "Gestor de vehiculos:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(135, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 19);
+            this.label1.TabIndex = 438;
+            this.label1.Text = "Modelo:";
+            // 
+            // txtModelo
+            // 
+            this.txtModelo.Location = new System.Drawing.Point(138, 56);
+            this.txtModelo.MaxLength = 15;
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(120, 27);
+            this.txtModelo.TabIndex = 437;
+            // 
+            // numericAño
+            // 
+            this.numericAño.Location = new System.Drawing.Point(264, 56);
+            this.numericAño.Maximum = new decimal(new int[] {
+            2023,
+            0,
+            0,
+            0});
+            this.numericAño.Minimum = new decimal(new int[] {
+            1990,
+            0,
+            0,
+            0});
+            this.numericAño.Name = "numericAño";
+            this.numericAño.Size = new System.Drawing.Size(59, 27);
+            this.numericAño.TabIndex = 439;
+            this.numericAño.Value = new decimal(new int[] {
+            1990,
+            0,
+            0,
+            0});
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(261, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 19);
+            this.label2.TabIndex = 440;
+            this.label2.Text = "Año";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(326, 37);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 19);
+            this.label4.TabIndex = 442;
+            this.label4.Text = "Placa:";
+            // 
+            // txtPlaca
+            // 
+            this.txtPlaca.Location = new System.Drawing.Point(329, 56);
+            this.txtPlaca.MaxLength = 15;
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(120, 27);
+            this.txtPlaca.TabIndex = 441;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox2.Controls.Add(this.btnAsignarCliente);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtNombreCompletoCliente);
+            this.groupBox2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(505, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(392, 72);
+            this.groupBox2.TabIndex = 443;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Información del conductor";
+            // 
+            // btnAsignarCliente
+            // 
+            this.btnAsignarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.btnAsignarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAsignarCliente.FlatAppearance.BorderSize = 0;
+            this.btnAsignarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(123)))), ((int)(((byte)(150)))));
+            this.btnAsignarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(89)))), ((int)(((byte)(109)))));
+            this.btnAsignarCliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsignarCliente.ForeColor = System.Drawing.Color.White;
+            this.btnAsignarCliente.Location = new System.Drawing.Point(298, 19);
+            this.btnAsignarCliente.Name = "btnAsignarCliente";
+            this.btnAsignarCliente.Size = new System.Drawing.Size(88, 43);
+            this.btnAsignarCliente.TabIndex = 12;
+            this.btnAsignarCliente.Text = "Asignar conductor";
+            this.btnAsignarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAsignarCliente.UseVisualStyleBackColor = false;
+            this.btnAsignarCliente.Click += new System.EventHandler(this.btnAsignarCliente_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 10F);
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(5, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(141, 19);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Nombre completo:";
+            // 
+            // txtNombreCompletoCliente
+            // 
+            this.txtNombreCompletoCliente.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.txtNombreCompletoCliente.ForeColor = System.Drawing.Color.Black;
+            this.txtNombreCompletoCliente.Location = new System.Drawing.Point(8, 39);
+            this.txtNombreCompletoCliente.MaxLength = 15;
+            this.txtNombreCompletoCliente.Name = "txtNombreCompletoCliente";
+            this.txtNombreCompletoCliente.ReadOnly = true;
+            this.txtNombreCompletoCliente.Size = new System.Drawing.Size(284, 27);
+            this.txtNombreCompletoCliente.TabIndex = 6;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(586, 90);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.btnCancelar.Size = new System.Drawing.Size(80, 30);
+            this.btnCancelar.TabIndex = 446;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.GrayText;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(669, 90);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.btnLimpiar.Size = new System.Drawing.Size(87, 30);
+            this.btnLimpiar.TabIndex = 445;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(123)))), ((int)(((byte)(150)))));
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(89)))), ((int)(((byte)(109)))));
+            this.btnGuardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(760, 90);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.btnGuardar.Size = new System.Drawing.Size(87, 30);
+            this.btnGuardar.TabIndex = 444;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // txtIdVehiculo
+            // 
+            this.txtIdVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtIdVehiculo.BackColor = System.Drawing.Color.DarkGray;
+            this.txtIdVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdVehiculo.ForeColor = System.Drawing.Color.Black;
+            this.txtIdVehiculo.Location = new System.Drawing.Point(15, 97);
+            this.txtIdVehiculo.Name = "txtIdVehiculo";
+            this.txtIdVehiculo.Size = new System.Drawing.Size(22, 27);
+            this.txtIdVehiculo.TabIndex = 447;
+            this.txtIdVehiculo.Text = "0";
+            this.txtIdVehiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIdVehiculo.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(59, 95);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 19);
+            this.label5.TabIndex = 449;
+            this.label5.Text = "Tipo:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(262, 95);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 19);
+            this.label6.TabIndex = 451;
+            this.label6.Text = "Cupo:";
+            // 
+            // boxTipo
+            // 
+            this.boxTipo.FormattingEnabled = true;
+            this.boxTipo.Location = new System.Drawing.Point(105, 92);
+            this.boxTipo.Name = "boxTipo";
+            this.boxTipo.Size = new System.Drawing.Size(121, 27);
+            this.boxTipo.TabIndex = 452;
+            // 
+            // numericCupo
+            // 
+            this.numericCupo.Location = new System.Drawing.Point(317, 92);
+            this.numericCupo.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericCupo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericCupo.Name = "numericCupo";
+            this.numericCupo.Size = new System.Drawing.Size(59, 27);
+            this.numericCupo.TabIndex = 453;
+            this.numericCupo.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // col_id_vehiculo
             // 
@@ -227,6 +521,20 @@
             this.col_año.MinimumWidth = 8;
             this.col_año.Name = "col_año";
             this.col_año.ReadOnly = true;
+            // 
+            // col_tipovehiculo
+            // 
+            this.col_tipovehiculo.HeaderText = "Tipo";
+            this.col_tipovehiculo.MinimumWidth = 6;
+            this.col_tipovehiculo.Name = "col_tipovehiculo";
+            this.col_tipovehiculo.ReadOnly = true;
+            // 
+            // col_cupo
+            // 
+            this.col_cupo.HeaderText = "Cupo";
+            this.col_cupo.MinimumWidth = 6;
+            this.col_cupo.Name = "col_cupo";
+            this.col_cupo.ReadOnly = true;
             // 
             // col_id_persona
             // 
@@ -292,303 +600,13 @@
             this.col_direccion.ReadOnly = true;
             this.col_direccion.Visible = false;
             // 
-            // btnReporte
-            // 
-            this.btnReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReporte.BackColor = System.Drawing.Color.Teal;
-            this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReporte.FlatAppearance.BorderSize = 0;
-            this.btnReporte.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporte.ForeColor = System.Drawing.Color.White;
-            this.btnReporte.Location = new System.Drawing.Point(756, 509);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.btnReporte.Size = new System.Drawing.Size(91, 30);
-            this.btnReporte.TabIndex = 429;
-            this.btnReporte.Text = "Reporte";
-            this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnReporte.UseVisualStyleBackColor = false;
-            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtFiltro.Location = new System.Drawing.Point(12, 516);
-            this.txtFiltro.MaxLength = 15;
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(150, 30);
-            this.txtFiltro.TabIndex = 428;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 23);
-            this.label3.TabIndex = 435;
-            this.label3.Text = "Marca:";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(12, 56);
-            this.txtMarca.MaxLength = 15;
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(120, 30);
-            this.txtMarca.TabIndex = 434;
-            // 
-            // lblTitutloFormulario
-            // 
-            this.lblTitutloFormulario.AutoSize = true;
-            this.lblTitutloFormulario.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.lblTitutloFormulario.ForeColor = System.Drawing.Color.Black;
-            this.lblTitutloFormulario.Location = new System.Drawing.Point(12, 9);
-            this.lblTitutloFormulario.Name = "lblTitutloFormulario";
-            this.lblTitutloFormulario.Size = new System.Drawing.Size(311, 35);
-            this.lblTitutloFormulario.TabIndex = 436;
-            this.lblTitutloFormulario.Text = "Gestor de vehiculos:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(135, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 23);
-            this.label1.TabIndex = 438;
-            this.label1.Text = "Modelo:";
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.Location = new System.Drawing.Point(138, 56);
-            this.txtModelo.MaxLength = 15;
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(120, 30);
-            this.txtModelo.TabIndex = 437;
-            // 
-            // numericAño
-            // 
-            this.numericAño.Location = new System.Drawing.Point(264, 56);
-            this.numericAño.Maximum = new decimal(new int[] {
-            2023,
-            0,
-            0,
-            0});
-            this.numericAño.Minimum = new decimal(new int[] {
-            1990,
-            0,
-            0,
-            0});
-            this.numericAño.Name = "numericAño";
-            this.numericAño.Size = new System.Drawing.Size(59, 30);
-            this.numericAño.TabIndex = 439;
-            this.numericAño.Value = new decimal(new int[] {
-            1990,
-            0,
-            0,
-            0});
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(261, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 23);
-            this.label2.TabIndex = 440;
-            this.label2.Text = "Año";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(326, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 23);
-            this.label4.TabIndex = 442;
-            this.label4.Text = "Placa:";
-            // 
-            // txtPlaca
-            // 
-            this.txtPlaca.Location = new System.Drawing.Point(329, 56);
-            this.txtPlaca.MaxLength = 15;
-            this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(120, 30);
-            this.txtPlaca.TabIndex = 441;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox2.Controls.Add(this.btnAsignarCliente);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtNombreCompletoCliente);
-            this.groupBox2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(455, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(392, 72);
-            this.groupBox2.TabIndex = 443;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Información del conductor";
-            // 
-            // btnAsignarCliente
-            // 
-            this.btnAsignarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.btnAsignarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAsignarCliente.FlatAppearance.BorderSize = 0;
-            this.btnAsignarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(123)))), ((int)(((byte)(150)))));
-            this.btnAsignarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(89)))), ((int)(((byte)(109)))));
-            this.btnAsignarCliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsignarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnAsignarCliente.Location = new System.Drawing.Point(298, 19);
-            this.btnAsignarCliente.Name = "btnAsignarCliente";
-            this.btnAsignarCliente.Size = new System.Drawing.Size(88, 43);
-            this.btnAsignarCliente.TabIndex = 12;
-            this.btnAsignarCliente.Text = "Asignar conductor";
-            this.btnAsignarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnAsignarCliente.UseVisualStyleBackColor = false;
-            this.btnAsignarCliente.Click += new System.EventHandler(this.btnAsignarCliente_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 10F);
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(5, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 23);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Nombre completo:";
-            // 
-            // txtNombreCompletoCliente
-            // 
-            this.txtNombreCompletoCliente.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtNombreCompletoCliente.ForeColor = System.Drawing.Color.Black;
-            this.txtNombreCompletoCliente.Location = new System.Drawing.Point(8, 39);
-            this.txtNombreCompletoCliente.MaxLength = 15;
-            this.txtNombreCompletoCliente.Name = "txtNombreCompletoCliente";
-            this.txtNombreCompletoCliente.ReadOnly = true;
-            this.txtNombreCompletoCliente.Size = new System.Drawing.Size(284, 30);
-            this.txtNombreCompletoCliente.TabIndex = 6;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(586, 90);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.btnCancelar.Size = new System.Drawing.Size(80, 30);
-            this.btnCancelar.TabIndex = 446;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.SystemColors.GrayText;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(669, 90);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.btnLimpiar.Size = new System.Drawing.Size(87, 30);
-            this.btnLimpiar.TabIndex = 445;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(123)))), ((int)(((byte)(150)))));
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(89)))), ((int)(((byte)(109)))));
-            this.btnGuardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(760, 90);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.btnGuardar.Size = new System.Drawing.Size(87, 30);
-            this.btnGuardar.TabIndex = 444;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // txtIdVehiculo
-            // 
-            this.txtIdVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtIdVehiculo.BackColor = System.Drawing.Color.DarkGray;
-            this.txtIdVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdVehiculo.ForeColor = System.Drawing.Color.Black;
-            this.txtIdVehiculo.Location = new System.Drawing.Point(12, 97);
-            this.txtIdVehiculo.Name = "txtIdVehiculo";
-            this.txtIdVehiculo.Size = new System.Drawing.Size(22, 30);
-            this.txtIdVehiculo.TabIndex = 447;
-            this.txtIdVehiculo.Text = "0";
-            this.txtIdVehiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtIdVehiculo.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(59, 95);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 23);
-            this.label5.TabIndex = 449;
-            this.label5.Text = "Tipo:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(262, 95);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 23);
-            this.label6.TabIndex = 451;
-            this.label6.Text = "Cupo:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(105, 92);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 31);
-            this.comboBox1.TabIndex = 452;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(317, 92);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(59, 30);
-            this.numericUpDown1.TabIndex = 453;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
             // FrmVehiculos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 551);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(935, 555);
+            this.Controls.Add(this.numericCupo);
+            this.Controls.Add(this.boxTipo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtIdVehiculo);
@@ -621,7 +639,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericAño)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericCupo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -652,12 +670,18 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtIdVehiculo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox boxTipo;
+        private System.Windows.Forms.NumericUpDown numericCupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id_vehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id_conductor;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_placa;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_año;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_tipovehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_cupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id_persona;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_apellido;
@@ -666,9 +690,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_tipo_documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_direccion;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

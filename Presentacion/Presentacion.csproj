@@ -64,11 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\FrmViajes.cs">
+    <Compile Include="Formularios\FrmEncomiendas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmViajes.Designer.cs">
-      <DependentUpon>FrmViajes.cs</DependentUpon>
+    <Compile Include="Formularios\FrmEncomiendas.Designer.cs">
+      <DependentUpon>FrmEncomiendas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmClientes.cs">
       <SubType>Form</SubType>
@@ -194,8 +194,8 @@
     <EmbeddedResource Include="Formularios\FrmVehiculos.resx">
       <DependentUpon>FrmVehiculos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmViajes.resx">
-      <DependentUpon>FrmViajes.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmEncomiendas.resx">
+      <DependentUpon>FrmEncomiendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -285,6 +285,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icono-taxi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repartidor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repartidor %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

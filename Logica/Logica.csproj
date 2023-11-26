@@ -48,6 +48,8 @@
     <Compile Include="Servicios\RolServicio.cs" />
     <Compile Include="Servicios\ServiciosServicio.cs" />
     <Compile Include="Servicios\TipoDocumentoServicio.cs" />
+    <Compile Include="Servicios\TipoEncomiendaServicio.cs" />
+    <Compile Include="Servicios\TipoVehiculoServicio.cs" />
     <Compile Include="Servicios\UsuarioServicio.cs" />
     <Compile Include="Servicios\VehiculoServicio.cs" />
     <Compile Include="Servicios\ViajesServicio.cs" />

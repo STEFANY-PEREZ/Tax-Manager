@@ -52,6 +52,8 @@
     <Compile Include="Repositorios\RolRepositorio.cs" />
     <Compile Include="Repositorios\ServicioRepositorio.cs" />
     <Compile Include="Repositorios\TipoDocumentoRepositorio.cs" />
+    <Compile Include="Repositorios\TipoEncomiendaRepositorio.cs" />
+    <Compile Include="Repositorios\TipoVehiculoRepositorio.cs" />
     <Compile Include="Repositorios\UsuarioRepositorio.cs" />
     <Compile Include="Repositorios\VehiculoRepositorio.cs" />
     <Compile Include="Repositorios\ViajesRepositorio.cs" />

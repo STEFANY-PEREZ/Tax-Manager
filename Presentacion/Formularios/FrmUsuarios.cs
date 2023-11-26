@@ -542,7 +542,7 @@ namespace Presentacion.Formularios
             {
                 if (string.IsNullOrWhiteSpace(textBox.Text))
                 {
-                    MessageBox.Show($"El campo '{textBox.Name.Substring(3)}' está vacío.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"El campo está vacío.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     textBox.Focus();
                     return false;
                 }

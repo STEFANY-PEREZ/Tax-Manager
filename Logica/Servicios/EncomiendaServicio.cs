@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Logica.Servicios
 {
-    public class ViajesServicio
+    public class EncomiendaServicio
     {
-        private ViajesRepositorio viajesRepositorio = new ViajesRepositorio();
-        public bool Crear(PedidoEncomienda viajes, out string mensaje)
+        private EncomiendaRepositorio viajesRepositorio = new EncomiendaRepositorio();
+        public bool Crear(Encomienda viajes, out string mensaje)
         {
             return viajesRepositorio.Crear(viajes, out mensaje);
         }
 
-        public bool Actualizar(PedidoEncomienda viajes, out string mensaje)
+        public bool Actualizar(Encomienda viajes, out string mensaje)
         {
             return viajesRepositorio.Actualizar(viajes, out mensaje);
         }
@@ -26,7 +26,7 @@ namespace Logica.Servicios
             return viajesRepositorio.Eliminar(id, out mensaje);
         }
 
-        public List<PedidoEncomienda> Listar()
+        public List<Encomienda> Listar()
         {
             return viajesRepositorio.Listar();
         }

@@ -298,28 +298,21 @@ namespace Presentacion.Formularios
             {
                 if (servicioSeleccionado != null)
                 {
-                    // Ruta donde se guardará el PDF
                     string pdfPath = $"C:/Users/NosRey/Documents/Visual Studio 2022/pdf/Factura_{servicioSeleccionado.Id}.pdf";
 
-                    // Crear un nuevo documento PDF
                     using (PdfDocument document = new PdfDocument())
                     {
-                        // Añadir una página al documento
                         PdfPage page = document.AddPage();
 
-                        // Obtener el objeto XGraphics para dibujar en la página
                         XGraphics gfx = XGraphics.FromPdfPage(page);
 
                         XFont fontTitulo = new XFont("Arial", 16, XFontStyle.Bold);
                         XFont fontNormal = new XFont("Arial", 12, XFontStyle.Regular);
 
-                        // Coordenadas para dibujar el texto
                         XPoint point = new XPoint(30, 30);
 
-                        // Definir ancho de columna
                         float columnWidth = 300;
 
-                        // Agregar contenido al documento PDF
                         DibujarCelda(gfx, "TAX-SERVICES", point, fontTitulo, XBrushes.Black, columnWidth);
                         point.Y += 30;
 
@@ -343,7 +336,6 @@ namespace Presentacion.Formularios
 
                         DibujarCelda(gfx, $"Tarifa: {servicioSeleccionado.Tarifa:C}", point, fontNormal, XBrushes.Black, columnWidth);
 
-                        // Guardar el documento PDF
                         document.Save(pdfPath);
 
                         MessageBox.Show($"Factura generada con éxito. Ruta: {pdfPath}", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -361,11 +353,9 @@ namespace Presentacion.Formularios
         }
         private void DibujarCelda(XGraphics gfx, string texto, XPoint point, XFont font, XBrush brush, float width)
         {
-            // Dibujar celda con el texto
             gfx.DrawRectangle(XBrushes.Transparent, point.X, point.Y, width, 20);
             gfx.DrawString(texto, font, brush, new XRect(point.X, point.Y, width, 20), XStringFormats.TopLeft);
 
-            // Mover el punto al inicio de la siguiente celda
             point.X += width;
         }
         private void tabla_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -392,8 +382,6 @@ namespace Presentacion.Formularios
                     DireccionDestino = direccionDestino,
                     Tarifa = tarifa,
                 };
-
-                MessageBox.Show($"Servicio seleccionado: {idServicio}", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }

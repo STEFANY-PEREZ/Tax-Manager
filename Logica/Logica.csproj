@@ -162,7 +162,7 @@
     <Compile Include="Servicios\TipoVehiculoServicio.cs" />
     <Compile Include="Servicios\UsuarioServicio.cs" />
     <Compile Include="Servicios\VehiculoServicio.cs" />
-    <Compile Include="Servicios\ViajesServicio.cs" />
+    <Compile Include="Servicios\EncomiendaServicio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

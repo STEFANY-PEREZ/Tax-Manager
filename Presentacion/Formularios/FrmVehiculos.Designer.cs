@@ -35,6 +35,22 @@
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.tabla = new System.Windows.Forms.DataGridView();
+            this.col_id_vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_id_conductor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_año = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tipovehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_id_persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_id_tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReporte = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,22 +74,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.boxTipo = new System.Windows.Forms.ComboBox();
             this.numericCupo = new System.Windows.Forms.NumericUpDown();
-            this.col_id_vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_id_conductor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_año = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tipovehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_id_persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_id_tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAño)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -187,6 +187,128 @@
             this.tabla.TabIndex = 430;
             this.tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellClick);
             this.tabla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellDoubleClick);
+            // 
+            // col_id_vehiculo
+            // 
+            this.col_id_vehiculo.HeaderText = "Id Vehiculo";
+            this.col_id_vehiculo.MinimumWidth = 8;
+            this.col_id_vehiculo.Name = "col_id_vehiculo";
+            this.col_id_vehiculo.ReadOnly = true;
+            this.col_id_vehiculo.Visible = false;
+            // 
+            // col_id_conductor
+            // 
+            this.col_id_conductor.HeaderText = "Id Conductor";
+            this.col_id_conductor.MinimumWidth = 8;
+            this.col_id_conductor.Name = "col_id_conductor";
+            this.col_id_conductor.ReadOnly = true;
+            this.col_id_conductor.Visible = false;
+            // 
+            // col_marca
+            // 
+            this.col_marca.HeaderText = "Marca";
+            this.col_marca.MinimumWidth = 8;
+            this.col_marca.Name = "col_marca";
+            this.col_marca.ReadOnly = true;
+            // 
+            // col_modelo
+            // 
+            this.col_modelo.HeaderText = "Modelo";
+            this.col_modelo.MinimumWidth = 8;
+            this.col_modelo.Name = "col_modelo";
+            this.col_modelo.ReadOnly = true;
+            // 
+            // col_placa
+            // 
+            this.col_placa.HeaderText = "Placa";
+            this.col_placa.MinimumWidth = 8;
+            this.col_placa.Name = "col_placa";
+            this.col_placa.ReadOnly = true;
+            // 
+            // col_año
+            // 
+            this.col_año.HeaderText = "Año";
+            this.col_año.MinimumWidth = 8;
+            this.col_año.Name = "col_año";
+            this.col_año.ReadOnly = true;
+            // 
+            // col_tipovehiculo
+            // 
+            this.col_tipovehiculo.HeaderText = "Tipo";
+            this.col_tipovehiculo.MinimumWidth = 6;
+            this.col_tipovehiculo.Name = "col_tipovehiculo";
+            this.col_tipovehiculo.ReadOnly = true;
+            // 
+            // col_cupo
+            // 
+            this.col_cupo.HeaderText = "Cupo";
+            this.col_cupo.MinimumWidth = 6;
+            this.col_cupo.Name = "col_cupo";
+            this.col_cupo.ReadOnly = true;
+            // 
+            // col_id_persona
+            // 
+            this.col_id_persona.HeaderText = "Id persona";
+            this.col_id_persona.MinimumWidth = 8;
+            this.col_id_persona.Name = "col_id_persona";
+            this.col_id_persona.ReadOnly = true;
+            this.col_id_persona.Visible = false;
+            // 
+            // col_nombre
+            // 
+            this.col_nombre.HeaderText = "nombre";
+            this.col_nombre.MinimumWidth = 8;
+            this.col_nombre.Name = "col_nombre";
+            this.col_nombre.ReadOnly = true;
+            this.col_nombre.Visible = false;
+            // 
+            // col_apellido
+            // 
+            this.col_apellido.HeaderText = "apellido";
+            this.col_apellido.MinimumWidth = 8;
+            this.col_apellido.Name = "col_apellido";
+            this.col_apellido.ReadOnly = true;
+            this.col_apellido.Visible = false;
+            // 
+            // col_numero_documento
+            // 
+            this.col_numero_documento.HeaderText = "num doc";
+            this.col_numero_documento.MinimumWidth = 8;
+            this.col_numero_documento.Name = "col_numero_documento";
+            this.col_numero_documento.ReadOnly = true;
+            this.col_numero_documento.Visible = false;
+            // 
+            // col_id_tipo_documento
+            // 
+            this.col_id_tipo_documento.HeaderText = "id tipo doc";
+            this.col_id_tipo_documento.MinimumWidth = 8;
+            this.col_id_tipo_documento.Name = "col_id_tipo_documento";
+            this.col_id_tipo_documento.ReadOnly = true;
+            this.col_id_tipo_documento.Visible = false;
+            // 
+            // col_tipo_documento
+            // 
+            this.col_tipo_documento.HeaderText = "tipo doc";
+            this.col_tipo_documento.MinimumWidth = 8;
+            this.col_tipo_documento.Name = "col_tipo_documento";
+            this.col_tipo_documento.ReadOnly = true;
+            this.col_tipo_documento.Visible = false;
+            // 
+            // col_telefono
+            // 
+            this.col_telefono.HeaderText = "tel";
+            this.col_telefono.MinimumWidth = 8;
+            this.col_telefono.Name = "col_telefono";
+            this.col_telefono.ReadOnly = true;
+            this.col_telefono.Visible = false;
+            // 
+            // col_direccion
+            // 
+            this.col_direccion.HeaderText = "direc";
+            this.col_direccion.MinimumWidth = 8;
+            this.col_direccion.Name = "col_direccion";
+            this.col_direccion.ReadOnly = true;
+            this.col_direccion.Visible = false;
             // 
             // btnReporte
             // 
@@ -477,128 +599,6 @@
             0,
             0,
             0});
-            // 
-            // col_id_vehiculo
-            // 
-            this.col_id_vehiculo.HeaderText = "Id Vehiculo";
-            this.col_id_vehiculo.MinimumWidth = 8;
-            this.col_id_vehiculo.Name = "col_id_vehiculo";
-            this.col_id_vehiculo.ReadOnly = true;
-            this.col_id_vehiculo.Visible = false;
-            // 
-            // col_id_conductor
-            // 
-            this.col_id_conductor.HeaderText = "Id Conductor";
-            this.col_id_conductor.MinimumWidth = 8;
-            this.col_id_conductor.Name = "col_id_conductor";
-            this.col_id_conductor.ReadOnly = true;
-            this.col_id_conductor.Visible = false;
-            // 
-            // col_marca
-            // 
-            this.col_marca.HeaderText = "Marca";
-            this.col_marca.MinimumWidth = 8;
-            this.col_marca.Name = "col_marca";
-            this.col_marca.ReadOnly = true;
-            // 
-            // col_modelo
-            // 
-            this.col_modelo.HeaderText = "Modelo";
-            this.col_modelo.MinimumWidth = 8;
-            this.col_modelo.Name = "col_modelo";
-            this.col_modelo.ReadOnly = true;
-            // 
-            // col_placa
-            // 
-            this.col_placa.HeaderText = "Placa";
-            this.col_placa.MinimumWidth = 8;
-            this.col_placa.Name = "col_placa";
-            this.col_placa.ReadOnly = true;
-            // 
-            // col_año
-            // 
-            this.col_año.HeaderText = "Año";
-            this.col_año.MinimumWidth = 8;
-            this.col_año.Name = "col_año";
-            this.col_año.ReadOnly = true;
-            // 
-            // col_tipovehiculo
-            // 
-            this.col_tipovehiculo.HeaderText = "Tipo";
-            this.col_tipovehiculo.MinimumWidth = 6;
-            this.col_tipovehiculo.Name = "col_tipovehiculo";
-            this.col_tipovehiculo.ReadOnly = true;
-            // 
-            // col_cupo
-            // 
-            this.col_cupo.HeaderText = "Cupo";
-            this.col_cupo.MinimumWidth = 6;
-            this.col_cupo.Name = "col_cupo";
-            this.col_cupo.ReadOnly = true;
-            // 
-            // col_id_persona
-            // 
-            this.col_id_persona.HeaderText = "Id persona";
-            this.col_id_persona.MinimumWidth = 8;
-            this.col_id_persona.Name = "col_id_persona";
-            this.col_id_persona.ReadOnly = true;
-            this.col_id_persona.Visible = false;
-            // 
-            // col_nombre
-            // 
-            this.col_nombre.HeaderText = "nombre";
-            this.col_nombre.MinimumWidth = 8;
-            this.col_nombre.Name = "col_nombre";
-            this.col_nombre.ReadOnly = true;
-            this.col_nombre.Visible = false;
-            // 
-            // col_apellido
-            // 
-            this.col_apellido.HeaderText = "apellido";
-            this.col_apellido.MinimumWidth = 8;
-            this.col_apellido.Name = "col_apellido";
-            this.col_apellido.ReadOnly = true;
-            this.col_apellido.Visible = false;
-            // 
-            // col_numero_documento
-            // 
-            this.col_numero_documento.HeaderText = "num doc";
-            this.col_numero_documento.MinimumWidth = 8;
-            this.col_numero_documento.Name = "col_numero_documento";
-            this.col_numero_documento.ReadOnly = true;
-            this.col_numero_documento.Visible = false;
-            // 
-            // col_id_tipo_documento
-            // 
-            this.col_id_tipo_documento.HeaderText = "id tipo doc";
-            this.col_id_tipo_documento.MinimumWidth = 8;
-            this.col_id_tipo_documento.Name = "col_id_tipo_documento";
-            this.col_id_tipo_documento.ReadOnly = true;
-            this.col_id_tipo_documento.Visible = false;
-            // 
-            // col_tipo_documento
-            // 
-            this.col_tipo_documento.HeaderText = "tipo doc";
-            this.col_tipo_documento.MinimumWidth = 8;
-            this.col_tipo_documento.Name = "col_tipo_documento";
-            this.col_tipo_documento.ReadOnly = true;
-            this.col_tipo_documento.Visible = false;
-            // 
-            // col_telefono
-            // 
-            this.col_telefono.HeaderText = "tel";
-            this.col_telefono.MinimumWidth = 8;
-            this.col_telefono.Name = "col_telefono";
-            this.col_telefono.ReadOnly = true;
-            this.col_telefono.Visible = false;
-            // 
-            // col_direccion
-            // 
-            this.col_direccion.HeaderText = "direc";
-            this.col_direccion.MinimumWidth = 8;
-            this.col_direccion.Name = "col_direccion";
-            this.col_direccion.ReadOnly = true;
-            this.col_direccion.Visible = false;
             // 
             // FrmVehiculos
             // 

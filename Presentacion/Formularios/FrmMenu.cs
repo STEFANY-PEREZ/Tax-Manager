@@ -40,7 +40,7 @@ namespace Presentacion.Formularios
 
         private void CambiarEstadoBotonesPrincipales(bool state, Button button)
         {
-            List<Button> buttons = new List<Button> { servicios, conductores, vehiculos, clientes, usuarios };
+            List<Button> buttons = new List<Button> { servicios, conductores, vehiculos, clientes, usuarios, encomienda };
 
             if (buttons.Contains(button))
             {
@@ -111,6 +111,11 @@ namespace Presentacion.Formularios
         private void encomienda_Click(object sender, System.EventArgs e)
         {
             //AbrirModulo(new FrmEncomiendas());
+        }
+
+        private void encomienda_Click_1(object sender, System.EventArgs e)
+        {
+            AbrirModulo(new FrmEncomiendas(), clientes);
         }
     }
 }

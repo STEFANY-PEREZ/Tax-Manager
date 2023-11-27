@@ -169,7 +169,7 @@
     <Compile Include="Repositorios\TipoVehiculoRepositorio.cs" />
     <Compile Include="Repositorios\UsuarioRepositorio.cs" />
     <Compile Include="Repositorios\VehiculoRepositorio.cs" />
-    <Compile Include="Repositorios\ViajesRepositorio.cs" />
+    <Compile Include="Repositorios\EncomiendaRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

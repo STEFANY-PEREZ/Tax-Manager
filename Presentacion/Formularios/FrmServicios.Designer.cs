@@ -500,7 +500,7 @@
             this.btnPdf.FlatAppearance.BorderSize = 0;
             this.btnPdf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPdf.ForeColor = System.Drawing.Color.White;
-            this.btnPdf.Location = new System.Drawing.Point(586, 509);
+            this.btnPdf.Location = new System.Drawing.Point(671, 510);
             this.btnPdf.Name = "btnPdf";
             this.btnPdf.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnPdf.Size = new System.Drawing.Size(79, 30);

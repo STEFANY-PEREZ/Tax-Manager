@@ -64,6 +64,7 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtIdServicio = new System.Windows.Forms.TextBox();
+            this.btnPdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -167,16 +168,19 @@
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla.Size = new System.Drawing.Size(835, 364);
             this.tabla.TabIndex = 436;
+            this.tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellClick);
             // 
             // col_id_servicio
             // 
             this.col_id_servicio.HeaderText = "Id";
+            this.col_id_servicio.MinimumWidth = 6;
             this.col_id_servicio.Name = "col_id_servicio";
             this.col_id_servicio.ReadOnly = true;
             // 
             // Id_cliente
             // 
             this.Id_cliente.HeaderText = "Id cliente";
+            this.Id_cliente.MinimumWidth = 6;
             this.Id_cliente.Name = "Id_cliente";
             this.Id_cliente.ReadOnly = true;
             this.Id_cliente.Visible = false;
@@ -184,6 +188,7 @@
             // id_conductor
             // 
             this.id_conductor.HeaderText = "id conductor";
+            this.id_conductor.MinimumWidth = 6;
             this.id_conductor.Name = "id_conductor";
             this.id_conductor.ReadOnly = true;
             this.id_conductor.Visible = false;
@@ -191,24 +196,28 @@
             // col_direccion_origen
             // 
             this.col_direccion_origen.HeaderText = "Dirección Origen";
+            this.col_direccion_origen.MinimumWidth = 6;
             this.col_direccion_origen.Name = "col_direccion_origen";
             this.col_direccion_origen.ReadOnly = true;
             // 
             // col_direccion_destino
             // 
             this.col_direccion_destino.HeaderText = "Dirección Destino";
+            this.col_direccion_destino.MinimumWidth = 6;
             this.col_direccion_destino.Name = "col_direccion_destino";
             this.col_direccion_destino.ReadOnly = true;
             // 
             // col_tarifa
             // 
             this.col_tarifa.HeaderText = "Tarifa";
+            this.col_tarifa.MinimumWidth = 6;
             this.col_tarifa.Name = "col_tarifa";
             this.col_tarifa.ReadOnly = true;
             // 
             // col_estado
             // 
             this.col_estado.HeaderText = "estado";
+            this.col_estado.MinimumWidth = 6;
             this.col_estado.Name = "col_estado";
             this.col_estado.ReadOnly = true;
             this.col_estado.Visible = false;
@@ -216,12 +225,14 @@
             // col_fecha_creacion
             // 
             this.col_fecha_creacion.HeaderText = "Fecha de creación";
+            this.col_fecha_creacion.MinimumWidth = 6;
             this.col_fecha_creacion.Name = "col_fecha_creacion";
             this.col_fecha_creacion.ReadOnly = true;
             // 
             // col_id_cliente
             // 
             this.col_id_cliente.HeaderText = "id cliente";
+            this.col_id_cliente.MinimumWidth = 6;
             this.col_id_cliente.Name = "col_id_cliente";
             this.col_id_cliente.ReadOnly = true;
             this.col_id_cliente.Visible = false;
@@ -250,7 +261,7 @@
             this.txtFiltro.Location = new System.Drawing.Point(12, 516);
             this.txtFiltro.MaxLength = 15;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(150, 23);
+            this.txtFiltro.Size = new System.Drawing.Size(150, 27);
             this.txtFiltro.TabIndex = 434;
             // 
             // groupBox2
@@ -293,7 +304,7 @@
             this.label7.ForeColor = System.Drawing.Color.DimGray;
             this.label7.Location = new System.Drawing.Point(5, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 16);
+            this.label7.Size = new System.Drawing.Size(141, 19);
             this.label7.TabIndex = 7;
             this.label7.Text = "Nombre completo:";
             // 
@@ -305,7 +316,7 @@
             this.txtNombreCompletoConductor.MaxLength = 15;
             this.txtNombreCompletoConductor.Name = "txtNombreCompletoConductor";
             this.txtNombreCompletoConductor.ReadOnly = true;
-            this.txtNombreCompletoConductor.Size = new System.Drawing.Size(284, 23);
+            this.txtNombreCompletoConductor.Size = new System.Drawing.Size(284, 27);
             this.txtNombreCompletoConductor.TabIndex = 6;
             // 
             // groupBox1
@@ -348,7 +359,7 @@
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(5, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 16);
+            this.label1.Size = new System.Drawing.Size(141, 19);
             this.label1.TabIndex = 7;
             this.label1.Text = "Nombre completo:";
             // 
@@ -360,7 +371,7 @@
             this.txtNombreCompletoCliente.MaxLength = 15;
             this.txtNombreCompletoCliente.Name = "txtNombreCompletoCliente";
             this.txtNombreCompletoCliente.ReadOnly = true;
-            this.txtNombreCompletoCliente.Size = new System.Drawing.Size(284, 23);
+            this.txtNombreCompletoCliente.Size = new System.Drawing.Size(284, 27);
             this.txtNombreCompletoCliente.TabIndex = 6;
             // 
             // label2
@@ -368,7 +379,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(209, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 16);
+            this.label2.Size = new System.Drawing.Size(133, 19);
             this.label2.TabIndex = 449;
             this.label2.Text = "Direción destino:";
             // 
@@ -377,7 +388,7 @@
             this.txtDirDestino.Location = new System.Drawing.Point(212, 110);
             this.txtDirDestino.MaxLength = 15;
             this.txtDirDestino.Name = "txtDirDestino";
-            this.txtDirDestino.Size = new System.Drawing.Size(194, 23);
+            this.txtDirDestino.Size = new System.Drawing.Size(194, 27);
             this.txtDirDestino.TabIndex = 448;
             // 
             // label3
@@ -385,7 +396,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 91);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 16);
+            this.label3.Size = new System.Drawing.Size(136, 19);
             this.label3.TabIndex = 447;
             this.label3.Text = "Dirección origen:";
             // 
@@ -394,7 +405,7 @@
             this.txtDirOrigen.Location = new System.Drawing.Point(12, 110);
             this.txtDirOrigen.MaxLength = 15;
             this.txtDirOrigen.Name = "txtDirOrigen";
-            this.txtDirOrigen.Size = new System.Drawing.Size(194, 23);
+            this.txtDirOrigen.Size = new System.Drawing.Size(194, 27);
             this.txtDirOrigen.TabIndex = 446;
             // 
             // label4
@@ -402,7 +413,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(407, 91);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 16);
+            this.label4.Size = new System.Drawing.Size(54, 19);
             this.label4.TabIndex = 451;
             this.label4.Text = "Tarifa:";
             // 
@@ -411,7 +422,7 @@
             this.txtTarifa.Location = new System.Drawing.Point(410, 110);
             this.txtTarifa.MaxLength = 15;
             this.txtTarifa.Name = "txtTarifa";
-            this.txtTarifa.Size = new System.Drawing.Size(120, 23);
+            this.txtTarifa.Size = new System.Drawing.Size(120, 27);
             this.txtTarifa.TabIndex = 450;
             // 
             // btnCancelar
@@ -475,17 +486,36 @@
             this.txtIdServicio.ForeColor = System.Drawing.Color.Black;
             this.txtIdServicio.Location = new System.Drawing.Point(825, 108);
             this.txtIdServicio.Name = "txtIdServicio";
-            this.txtIdServicio.Size = new System.Drawing.Size(22, 23);
+            this.txtIdServicio.Size = new System.Drawing.Size(22, 27);
             this.txtIdServicio.TabIndex = 455;
             this.txtIdServicio.Text = "0";
             this.txtIdServicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIdServicio.Visible = false;
             // 
+            // btnPdf
+            // 
+            this.btnPdf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPdf.BackColor = System.Drawing.Color.Firebrick;
+            this.btnPdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPdf.FlatAppearance.BorderSize = 0;
+            this.btnPdf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPdf.ForeColor = System.Drawing.Color.White;
+            this.btnPdf.Location = new System.Drawing.Point(671, 510);
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.btnPdf.Size = new System.Drawing.Size(79, 30);
+            this.btnPdf.TabIndex = 456;
+            this.btnPdf.Text = "PDF";
+            this.btnPdf.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnPdf.UseVisualStyleBackColor = false;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
+            // 
             // FrmServicios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 551);
+            this.Controls.Add(this.btnPdf);
             this.Controls.Add(this.txtIdServicio);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnLimpiar);
@@ -555,5 +585,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_fecha_creacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id_cliente;
+        private System.Windows.Forms.Button btnPdf;
     }
 }

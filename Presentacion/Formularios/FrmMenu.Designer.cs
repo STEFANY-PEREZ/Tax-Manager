@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.panelLateral = new System.Windows.Forms.Panel();
-            this.encomienda = new System.Windows.Forms.Button();
             this.usuarios = new System.Windows.Forms.Button();
             this.vehiculos = new System.Windows.Forms.Button();
             this.conductores = new System.Windows.Forms.Button();
             this.servicios = new System.Windows.Forms.Button();
             this.clientes = new System.Windows.Forms.Button();
             this.panelBase = new System.Windows.Forms.Panel();
+            this.encomienda = new System.Windows.Forms.Button();
             this.panelLateral.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,25 +54,6 @@
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(108, 618);
             this.panelLateral.TabIndex = 2;
-            // 
-            // encomienda
-            // 
-            this.encomienda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.encomienda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.encomienda.FlatAppearance.BorderSize = 0;
-            this.encomienda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.encomienda.Font = new System.Drawing.Font("Arial", 8F);
-            this.encomienda.ForeColor = System.Drawing.Color.Black;
-            this.encomienda.Image = global::Presentacion.Properties.Resources.repartidor__1_;
-            this.encomienda.Location = new System.Drawing.Point(0, 375);
-            this.encomienda.Name = "encomienda";
-            this.encomienda.Size = new System.Drawing.Size(108, 75);
-            this.encomienda.TabIndex = 7;
-            this.encomienda.Text = "Encomienda";
-            this.encomienda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.encomienda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.encomienda.UseVisualStyleBackColor = false;
-            this.encomienda.Click += new System.EventHandler(this.encomienda_Click);
             // 
             // usuarios
             // 
@@ -182,6 +163,25 @@
             this.panelBase.Name = "panelBase";
             this.panelBase.Size = new System.Drawing.Size(1025, 618);
             this.panelBase.TabIndex = 4;
+            // 
+            // encomienda
+            // 
+            this.encomienda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.encomienda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.encomienda.FlatAppearance.BorderSize = 0;
+            this.encomienda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.encomienda.Font = new System.Drawing.Font("Arial", 8F);
+            this.encomienda.ForeColor = System.Drawing.Color.Black;
+            this.encomienda.Image = global::Presentacion.Properties.Resources.repartidor__1_;
+            this.encomienda.Location = new System.Drawing.Point(0, 375);
+            this.encomienda.Name = "encomienda";
+            this.encomienda.Size = new System.Drawing.Size(108, 75);
+            this.encomienda.TabIndex = 8;
+            this.encomienda.Text = "Encomienda";
+            this.encomienda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.encomienda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.encomienda.UseVisualStyleBackColor = false;
+            this.encomienda.Click += new System.EventHandler(this.encomienda_Click_1);
             // 
             // FrmMenu
             // 

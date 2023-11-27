@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace Datos.Repositorios
 {
-    public class ViajesRepositorio : IRepositorioGenerico<PedidoEncomienda>
+    public class EncomiendaRepositorio : IRepositorioGenerico<Encomienda>
     {
-        public bool Crear(PedidoEncomienda entidad, out string mensaje)
+        public bool Crear(Encomienda entidad, out string mensaje)
         {
             bool resultado = false;
             mensaje = "";
@@ -28,7 +28,7 @@ namespace Datos.Repositorios
                     SqlCommand command = new SqlCommand("CrearPedidoEncomienda", connection);
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.AddWithValue("@IdEncomienda", entidad.IdViaje);
+                    // Ajustar parámetros
                     command.Parameters.AddWithValue("@DireccionOrigen", entidad.DireccionOrigen);
                     command.Parameters.AddWithValue("@DireccionDestino", entidad.DireccionDestino);
                     command.Parameters.AddWithValue("@Telefono", entidad.Telefono);
@@ -37,7 +37,7 @@ namespace Datos.Repositorios
                     command.Parameters.AddWithValue("@Contenido", entidad.Contenido);
                     command.Parameters.AddWithValue("@FechaCreacion", entidad.FechaCreacion);
                     command.Parameters.Add("@Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    command.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    command.Parameters.Add("@Mensaje", SqlDbType.NVarChar, 500).Direction = ParameterDirection.Output;
 
                     command.ExecuteNonQuery();
 
@@ -103,9 +103,9 @@ namespace Datos.Repositorios
             return exito;
         }
 
-        public List<PedidoEncomienda> Listar()
+        public List<Encomienda> Listar()
         {
-            List<PedidoEncomienda > encomiendas = new List<PedidoEncomienda>();
+            List<Encomienda > encomiendas = new List<Encomienda>();
 
             try
             {
@@ -122,38 +122,15 @@ namespace Datos.Repositorios
                     {
                         while (reader.Read())
                         {
-                            PedidoEncomienda encomienda = new PedidoEncomienda();
-                            encomienda.IdViaje = Convert.ToInt32(reader["IdVehiculo"]);
+                            Encomienda encomienda = new Encomienda();
+                            encomienda.IdViaje = Convert.ToInt32(reader["IdEncomienda"]);
                             encomienda.DireccionOrigen = reader["DireccionOrigen"].ToString();
                             encomienda.DireccionDestino = reader["DireccionDestino"].ToString();
                             encomienda.Telefono = reader["Telefono"].ToString();
-                            encomienda.Tipo = reader["Tipo"].ToString();
                             encomienda.Valor = Convert.ToDecimal(reader["Valor"]);
-                            encomienda.Estado = Convert.ToBoolean(reader["Estado"]);
+                            encomienda.Tipo = reader["TipoEncomienda"].ToString();
                             encomienda.Contenido = reader["Contenido"].ToString();
-                            encomienda.FechaCreacion = Convert.ToDateTime(reader["FechaCreacionVehiculo"]);
-
-                            Conductor conductor = new Conductor();
-                            conductor.Id = Convert.ToInt32(reader["IdConductor"]);
-                            conductor.Estado = Convert.ToBoolean(reader["Estado"]);
-                            //conductor.FechaCreacion = Convert.ToDateTime(reader["FechaCreacion"]);
-
-                            Persona persona = new Persona();
-                            persona.Id = Convert.ToInt32(reader["IdPersona"]);
-                            persona.Nombre = reader["Nombre"].ToString();
-                            persona.Apellido = reader["Apellido"].ToString();
-                            persona.NumeroDocumento = reader["NumeroDocumento"].ToString();
-                            persona.Telefono = reader["Telefono"].ToString();
-                            persona.Direccion = reader["Direccion"].ToString();
-                            persona.FechaCreacion = Convert.ToDateTime(reader["FechaCreacionPersona"]);
-
-                            TipoDocumento tipoDocumento = new TipoDocumento();
-                            tipoDocumento.Id = Convert.ToInt32(reader["IdTipoDocumento"]);
-                            tipoDocumento.Nombre = reader["TipoDocumento"].ToString();
-
-                            persona.TipoDocumento = tipoDocumento;
-                            conductor.Persona = persona;
-                            encomienda.Conductor = conductor;
+                            encomienda.FechaCreacion = Convert.ToDateTime(reader["FechaCreacion"]);
 
                             encomiendas.Add(encomienda);
                         }
@@ -162,14 +139,14 @@ namespace Datos.Repositorios
             }
             catch (Exception ex)
             {
-                encomiendas = new List<PedidoEncomienda>();
+                encomiendas = new List<Encomienda>();
                 throw ex;
             }
 
             return encomiendas;
 
         }
-        public bool Actualizar(PedidoEncomienda entidad, out string mensaje)
+        public bool Actualizar(Encomienda entidad, out string mensaje)
         {
             throw new NotImplementedException();
         }

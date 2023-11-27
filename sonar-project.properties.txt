@@ -1,0 +1,17 @@
+# Identificador único del proyecto en SonarQube
+sonar.projectKey=Tax-Services
+
+# Nombre del proyecto
+sonar.projectName=Tax-Services
+
+# Versión del proyecto
+sonar.projectVersion=1.0
+
+# Directorio donde se encuentran los archivos fuente del proyecto
+sonar.sources=C:\Users\NosRey\Documents\Trabajo
+
+# URL de tu instancia de SonarQube
+sonar.host.url=http://localhost:9000
+
+# Token de acceso generado en SonarQube para el proyecto
+sonar.login=sqp_5e801d4f032fae2f044c6b5ebe546d57cc0f92b3

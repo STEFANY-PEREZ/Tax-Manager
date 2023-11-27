@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -64,7 +64,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDireccionOrigen = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtContenido = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(344, 35);
+            this.label10.Location = new System.Drawing.Point(35, 89);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 19);
             this.label10.TabIndex = 455;
@@ -101,10 +101,10 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(347, 54);
+            this.txtTelefono.Location = new System.Drawing.Point(38, 108);
             this.txtTelefono.MaxLength = 15;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(151, 27);
+            this.txtTelefono.Size = new System.Drawing.Size(143, 27);
             this.txtTelefono.TabIndex = 454;
             // 
             // btnRestaurar
@@ -157,14 +157,14 @@
             this.tabla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.tabla.BackgroundColor = System.Drawing.Color.Silver;
             this.tabla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_direccion,
@@ -180,26 +180,26 @@
             this.col_nombre_rol,
             this.col_telefono,
             this.col_nombre_usuario});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tabla.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tabla.DefaultCellStyle = dataGridViewCellStyle8;
             this.tabla.Location = new System.Drawing.Point(11, 144);
             this.tabla.Name = "tabla";
             this.tabla.ReadOnly = true;
             this.tabla.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(103)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(103)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.tabla.RowHeadersWidth = 20;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla.Size = new System.Drawing.Size(835, 357);
@@ -407,7 +407,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(504, 26);
+            this.label8.Location = new System.Drawing.Point(501, 35);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 19);
             this.label8.TabIndex = 444;
@@ -417,7 +417,7 @@
             // 
             this.boxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.boxTipo.FormattingEnabled = true;
-            this.boxTipo.Location = new System.Drawing.Point(504, 54);
+            this.boxTipo.Location = new System.Drawing.Point(501, 54);
             this.boxTipo.Name = "boxTipo";
             this.boxTipo.Size = new System.Drawing.Size(150, 27);
             this.boxTipo.TabIndex = 440;
@@ -425,7 +425,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(184, 34);
+            this.label5.Location = new System.Drawing.Point(341, 35);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 19);
             this.label5.TabIndex = 441;
@@ -433,7 +433,7 @@
             // 
             // txtDireccionDestino
             // 
-            this.txtDireccionDestino.Location = new System.Drawing.Point(187, 53);
+            this.txtDireccionDestino.Location = new System.Drawing.Point(344, 54);
             this.txtDireccionDestino.MaxLength = 15;
             this.txtDireccionDestino.Name = "txtDireccionDestino";
             this.txtDireccionDestino.Size = new System.Drawing.Size(151, 27);
@@ -442,7 +442,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 35);
+            this.label3.Location = new System.Drawing.Point(184, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 19);
             this.label3.TabIndex = 439;
@@ -450,33 +450,33 @@
             // 
             // txtDireccionOrigen
             // 
-            this.txtDireccionOrigen.Location = new System.Drawing.Point(46, 54);
+            this.txtDireccionOrigen.Location = new System.Drawing.Point(187, 54);
             this.txtDireccionOrigen.MaxLength = 15;
             this.txtDireccionOrigen.Name = "txtDireccionOrigen";
-            this.txtDireccionOrigen.Size = new System.Drawing.Size(135, 27);
+            this.txtDireccionOrigen.Size = new System.Drawing.Size(151, 27);
             this.txtDireccionOrigen.TabIndex = 436;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 89);
+            this.label1.Location = new System.Drawing.Point(34, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 19);
+            this.label1.Size = new System.Drawing.Size(125, 19);
             this.label1.TabIndex = 458;
-            this.label1.Text = "Peso Encomienda:";
+            this.label1.Text = "Ingrese Cedula:";
             // 
-            // txtPeso
+            // txtCedula
             // 
-            this.txtPeso.Location = new System.Drawing.Point(47, 108);
-            this.txtPeso.MaxLength = 15;
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(147, 27);
-            this.txtPeso.TabIndex = 459;
+            this.txtCedula.Location = new System.Drawing.Point(34, 54);
+            this.txtCedula.MaxLength = 15;
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(147, 27);
+            this.txtCedula.TabIndex = 459;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(357, 89);
+            this.label2.Location = new System.Drawing.Point(340, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 19);
             this.label2.TabIndex = 460;
@@ -484,16 +484,16 @@
             // 
             // txtContenido
             // 
-            this.txtContenido.Location = new System.Drawing.Point(357, 108);
+            this.txtContenido.Location = new System.Drawing.Point(344, 108);
             this.txtContenido.MaxLength = 15;
             this.txtContenido.Name = "txtContenido";
-            this.txtContenido.Size = new System.Drawing.Size(297, 27);
+            this.txtContenido.Size = new System.Drawing.Size(307, 27);
             this.txtContenido.TabIndex = 461;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(200, 88);
+            this.label4.Location = new System.Drawing.Point(187, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 19);
             this.label4.TabIndex = 462;
@@ -501,7 +501,7 @@
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(200, 108);
+            this.txtValor.Location = new System.Drawing.Point(187, 108);
             this.txtValor.MaxLength = 15;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(151, 27);
@@ -516,7 +516,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtContenido);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtPeso);
+            this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label10);
@@ -583,7 +583,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_nombre_usuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPeso;
+        private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtContenido;
         private System.Windows.Forms.Label label4;

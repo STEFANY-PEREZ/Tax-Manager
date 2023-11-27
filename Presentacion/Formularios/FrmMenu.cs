@@ -110,7 +110,12 @@ namespace Presentacion.Formularios
 
         private void encomienda_Click(object sender, System.EventArgs e)
         {
-            AbrirModulo(new FrmEncomiendas(), encomienda);
+            //AbrirModulo(new FrmEncomiendas());
+        }
+
+        private void encomienda_Click_1(object sender, System.EventArgs e)
+        {
+            AbrirModulo(new FrmEncomiendas(), clientes);
         }
     }
 }

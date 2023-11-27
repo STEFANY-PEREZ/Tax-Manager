@@ -1,5 +1,6 @@
 ﻿using Datos.Repositorios;
 using Entidad;
+using System;
 using System.Collections.Generic;
 
 namespace Logica.Servicios
@@ -11,6 +12,11 @@ namespace Logica.Servicios
         public bool Crear(Servicio servicio)
         {
             return servicioRepositorio.Crear(servicio);
+        }
+
+        public void GenerarFacturaPDF(Servicio servicioSeleccionado)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Servicio> Listar()

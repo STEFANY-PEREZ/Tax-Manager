@@ -9,10 +9,10 @@ namespace Presentacion.Formularios
 {
     public partial class FrmEncomiendas : Form
     {
-        private ViajesServicio ViajesServicio = new ViajesServicio();
+        private EncomiendaServicio ViajesServicio = new EncomiendaServicio();
         private TipoEncomiendaServicio TipoEncomiendaServicio = new TipoEncomiendaServicio();
 
-        PedidoEncomienda Viajes = new PedidoEncomienda();
+        Encomienda Viajes = new Encomienda();
         Conductor condutorElegido = new Conductor();
         int id = 0;
         public FrmEncomiendas()
@@ -55,7 +55,7 @@ namespace Presentacion.Formularios
 
                     if (result == DialogResult.Yes)
                     {
-                        if (!ValidarCamposVacios())
+                        if (!ValidarCamposVacios() || !ValidarFormatoValor())
                         {
                             return;
                         }
@@ -68,7 +68,7 @@ namespace Presentacion.Formularios
 
                         if (resultado)
                         {
-                            MessageBox.Show($"Viaje con referencia '{Viajes.IdViaje}' creado exitosamente.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"Viaje con referencia creado exitosamente.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             LimpiarFormulario();
                         }
@@ -83,6 +83,18 @@ namespace Presentacion.Formularios
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private bool ValidarFormatoValor()
+        {
+            if (!decimal.TryParse(txtValor.Text, out _))
+            {
+                MessageBox.Show("El campo 'Valor' debe ser un número decimal válido.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtValor.Focus();
+                return false;
+            }
+
+            return true;
         }
 
         private void Eliminar()
@@ -142,9 +154,9 @@ namespace Presentacion.Formularios
             {
                 tabla.Rows.Clear();
 
-                List<PedidoEncomienda> viajes = ViajesServicio.Listar();
+                List<Encomienda> viajes = ViajesServicio.Listar();
 
-                foreach (PedidoEncomienda viaje in viajes)
+                foreach (Encomienda viaje in viajes)
                 {
                     tabla.Rows.Add(new object[]
                     {
@@ -153,10 +165,7 @@ namespace Presentacion.Formularios
                         viaje.Valor,
                         viaje.DireccionDestino,
                         viaje.Telefono,
-                        viaje.Estado,
                         viaje.FechaCreacion,
-                        viaje.Conductor.Id,
-                        viaje.Vehiculo.Id,
                         viaje.Tipo
                     });
                 }
@@ -169,29 +178,24 @@ namespace Presentacion.Formularios
         }
         private void CapturarViaje()
         {
-
             TipoEncomiendas tipoEncomiendas = (TipoEncomiendas)boxTipo.SelectedItem;
 
             Viajes.tipoEncomiendas = new TipoEncomiendas
             {
                 IdEncomienda = tipoEncomiendas.IdEncomienda
             };
-
-            Viajes.DireccionDestino = txtDireccionDestino.Text;
+            Viajes.Identificacion = txtCedula.Text;
             Viajes.DireccionOrigen = txtDireccionOrigen.Text;
-            Viajes.Telefono = txtTelefono.Text;
-            Viajes.Valor = Convert.ToDecimal(txtValor.Text);
-            Viajes.Contenido = txtContenido.Text;
+            Viajes.DireccionDestino = txtDireccionDestino.Text;
             Viajes.Tipo = boxTipo.Text;
-            //Viajes.Estado = 
-
-            // Asigna el TipoEncomiendas seleccionado
-            Viajes.tipoEncomiendas = tipoEncomiendas;
+            Viajes.Telefono = txtTelefono.Text;
+            Viajes.Valor = Convert.ToDecimal(txtValor.Text); // Ajuste a Convert.ToDecimal
+            Viajes.Contenido = txtContenido.Text;
         }
 
         private bool ValidarCamposVacios()
         {
-            TextBox[] textBoxes = { txtDireccionOrigen, txtDireccionDestino, txtTelefono };
+            TextBox[] textBoxes = { txtCedula, txtDireccionOrigen, txtDireccionDestino, txtTelefono, txtValor, txtContenido };
 
             foreach (TextBox textBox in textBoxes)
             {
@@ -211,6 +215,8 @@ namespace Presentacion.Formularios
             txtDireccionOrigen.Clear();
             txtDireccionDestino.Clear();
             txtTelefono.Clear();
+            txtValor.Clear();
+            txtContenido.Clear();
         }
 
         private void RestablecerColoresTextBox()

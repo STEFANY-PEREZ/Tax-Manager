@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    public class PedidoEncomienda
+    public class Encomienda
     {
         public int IdViaje { get; set; }
         public Conductor Conductor { get; set; }
         public Vehiculo Vehiculo { get; set; }
         public TipoEncomiendas tipoEncomiendas { get; set; }
+        public string Identificacion { get; set; }
         public string DireccionOrigen { get; set; }
         public string DireccionDestino { get; set; }
         public string Telefono { get; set; }

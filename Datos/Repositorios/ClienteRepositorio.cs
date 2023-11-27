@@ -1,6 +1,9 @@
 ﻿using Datos.Conexiones;
 using Datos.Interfaces;
 using Entidad;
+using HtmlAgilityPack;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -112,6 +115,9 @@ namespace Datos.Repositorios
                         if (exito != 0)
                         {
                             resultado = true;
+
+                            //GenerarFactura(cliente);
+
                         }
                     }
                 }

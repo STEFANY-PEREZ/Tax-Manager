@@ -5,18 +5,19 @@ using System.Collections.Generic;
 
 namespace Logica.Servicios
 {
-    public class ServiciosServicio
+    public class ServiciosServicio 
     {
         private readonly ServicioRepositorio servicioRepositorio = new ServicioRepositorio();
+        
 
         public bool Crear(Servicio servicio)
         {
             return servicioRepositorio.Crear(servicio);
         }
 
-        public void GenerarFacturaPDF(Servicio servicioSeleccionado)
+        public void GenerarFacturaPdf(Servicio servicioSeleccionado)
         {
-            throw new NotImplementedException();
+            servicioRepositorio.GenerarFacturaPdf(servicioSeleccionado);
         }
 
         public List<Servicio> Listar()

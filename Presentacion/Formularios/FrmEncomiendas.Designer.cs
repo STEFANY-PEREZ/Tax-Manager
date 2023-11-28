@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -38,19 +38,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.tabla = new System.Windows.Forms.DataGridView();
-            this.col_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_contenido_encomienda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_id_persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_id_tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_id_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nombre_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nombre_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -69,6 +56,14 @@
             this.txtContenido = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_direccion_origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_direccion_destino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,161 +152,48 @@
             this.tabla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.tabla.BackgroundColor = System.Drawing.Color.Silver;
             this.tabla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_direccion,
-            this.col_id_usuario,
-            this.col_contenido_encomienda,
-            this.col_id_persona,
-            this.col_nombres,
-            this.col_apellidos,
-            this.col_numero_documento,
-            this.col_id_tipo_documento,
-            this.col_tipo_documento,
-            this.col_id_rol,
-            this.col_nombre_rol,
+            this.col_id,
+            this.col_identificacion,
+            this.col_direccion_origen,
+            this.col_direccion_destino,
             this.col_telefono,
-            this.col_nombre_usuario});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tabla.DefaultCellStyle = dataGridViewCellStyle8;
+            this.col_tipo,
+            this.valor_valor,
+            this.col_fecha_creacion});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tabla.DefaultCellStyle = dataGridViewCellStyle2;
             this.tabla.Location = new System.Drawing.Point(11, 144);
             this.tabla.Name = "tabla";
             this.tabla.ReadOnly = true;
             this.tabla.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(103)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(103)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.tabla.RowHeadersWidth = 20;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla.Size = new System.Drawing.Size(835, 357);
             this.tabla.TabIndex = 450;
-            // 
-            // col_direccion
-            // 
-            this.col_direccion.HeaderText = "Direccion";
-            this.col_direccion.MinimumWidth = 8;
-            this.col_direccion.Name = "col_direccion";
-            this.col_direccion.ReadOnly = true;
-            this.col_direccion.Width = 109;
-            // 
-            // col_id_usuario
-            // 
-            this.col_id_usuario.HeaderText = "Id empleado";
-            this.col_id_usuario.MinimumWidth = 8;
-            this.col_id_usuario.Name = "col_id_usuario";
-            this.col_id_usuario.ReadOnly = true;
-            this.col_id_usuario.Visible = false;
-            this.col_id_usuario.Width = 127;
-            // 
-            // col_contenido_encomienda
-            // 
-            this.col_contenido_encomienda.HeaderText = "Contenido";
-            this.col_contenido_encomienda.MinimumWidth = 6;
-            this.col_contenido_encomienda.Name = "col_contenido_encomienda";
-            this.col_contenido_encomienda.ReadOnly = true;
-            this.col_contenido_encomienda.Width = 112;
-            // 
-            // col_id_persona
-            // 
-            this.col_id_persona.HeaderText = "Id persona";
-            this.col_id_persona.MinimumWidth = 8;
-            this.col_id_persona.Name = "col_id_persona";
-            this.col_id_persona.ReadOnly = true;
-            this.col_id_persona.Visible = false;
-            this.col_id_persona.Width = 116;
-            // 
-            // col_nombres
-            // 
-            this.col_nombres.HeaderText = "Nombres";
-            this.col_nombres.MinimumWidth = 8;
-            this.col_nombres.Name = "col_nombres";
-            this.col_nombres.ReadOnly = true;
-            this.col_nombres.Width = 103;
-            // 
-            // col_apellidos
-            // 
-            this.col_apellidos.HeaderText = "Apellidos";
-            this.col_apellidos.MinimumWidth = 8;
-            this.col_apellidos.Name = "col_apellidos";
-            this.col_apellidos.ReadOnly = true;
-            this.col_apellidos.Width = 103;
-            // 
-            // col_numero_documento
-            // 
-            this.col_numero_documento.HeaderText = "N° documento";
-            this.col_numero_documento.MinimumWidth = 8;
-            this.col_numero_documento.Name = "col_numero_documento";
-            this.col_numero_documento.ReadOnly = true;
-            this.col_numero_documento.Width = 129;
-            // 
-            // col_id_tipo_documento
-            // 
-            this.col_id_tipo_documento.HeaderText = "Id tipo documento";
-            this.col_id_tipo_documento.MinimumWidth = 8;
-            this.col_id_tipo_documento.Name = "col_id_tipo_documento";
-            this.col_id_tipo_documento.ReadOnly = true;
-            this.col_id_tipo_documento.Visible = false;
-            this.col_id_tipo_documento.Width = 168;
-            // 
-            // col_tipo_documento
-            // 
-            this.col_tipo_documento.HeaderText = "Tipo de documento";
-            this.col_tipo_documento.MinimumWidth = 8;
-            this.col_tipo_documento.Name = "col_tipo_documento";
-            this.col_tipo_documento.ReadOnly = true;
-            this.col_tipo_documento.Width = 161;
-            // 
-            // col_id_rol
-            // 
-            this.col_id_rol.HeaderText = "Id rol";
-            this.col_id_rol.MinimumWidth = 8;
-            this.col_id_rol.Name = "col_id_rol";
-            this.col_id_rol.ReadOnly = true;
-            this.col_id_rol.Visible = false;
-            this.col_id_rol.Width = 70;
-            // 
-            // col_nombre_rol
-            // 
-            this.col_nombre_rol.HeaderText = "Rol";
-            this.col_nombre_rol.MinimumWidth = 8;
-            this.col_nombre_rol.Name = "col_nombre_rol";
-            this.col_nombre_rol.ReadOnly = true;
-            this.col_nombre_rol.Width = 61;
-            // 
-            // col_telefono
-            // 
-            this.col_telefono.HeaderText = "Telefono";
-            this.col_telefono.MinimumWidth = 8;
-            this.col_telefono.Name = "col_telefono";
-            this.col_telefono.ReadOnly = true;
-            this.col_telefono.Width = 98;
-            // 
-            // col_nombre_usuario
-            // 
-            this.col_nombre_usuario.HeaderText = "Nombre de usuario";
-            this.col_nombre_usuario.MinimumWidth = 8;
-            this.col_nombre_usuario.Name = "col_nombre_usuario";
-            this.col_nombre_usuario.ReadOnly = true;
-            this.col_nombre_usuario.Width = 162;
             // 
             // btnCancelar
             // 
@@ -507,6 +389,70 @@
             this.txtValor.Size = new System.Drawing.Size(151, 27);
             this.txtValor.TabIndex = 463;
             // 
+            // col_id
+            // 
+            this.col_id.HeaderText = "ID";
+            this.col_id.MinimumWidth = 6;
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            this.col_id.Width = 55;
+            // 
+            // col_identificacion
+            // 
+            this.col_identificacion.HeaderText = "Identificacion";
+            this.col_identificacion.MinimumWidth = 6;
+            this.col_identificacion.Name = "col_identificacion";
+            this.col_identificacion.ReadOnly = true;
+            this.col_identificacion.Width = 136;
+            // 
+            // col_direccion_origen
+            // 
+            this.col_direccion_origen.HeaderText = "Direccion Origen";
+            this.col_direccion_origen.MinimumWidth = 6;
+            this.col_direccion_origen.Name = "col_direccion_origen";
+            this.col_direccion_origen.ReadOnly = true;
+            this.col_direccion_origen.Width = 149;
+            // 
+            // col_direccion_destino
+            // 
+            this.col_direccion_destino.HeaderText = "Direccion Destino";
+            this.col_direccion_destino.MinimumWidth = 6;
+            this.col_direccion_destino.Name = "col_direccion_destino";
+            this.col_direccion_destino.ReadOnly = true;
+            this.col_direccion_destino.Width = 155;
+            // 
+            // col_telefono
+            // 
+            this.col_telefono.HeaderText = "Telefono";
+            this.col_telefono.MinimumWidth = 6;
+            this.col_telefono.Name = "col_telefono";
+            this.col_telefono.ReadOnly = true;
+            this.col_telefono.Width = 98;
+            // 
+            // col_tipo
+            // 
+            this.col_tipo.HeaderText = "Tipo";
+            this.col_tipo.MinimumWidth = 6;
+            this.col_tipo.Name = "col_tipo";
+            this.col_tipo.ReadOnly = true;
+            this.col_tipo.Width = 68;
+            // 
+            // valor_valor
+            // 
+            this.valor_valor.HeaderText = "Valor";
+            this.valor_valor.MinimumWidth = 6;
+            this.valor_valor.Name = "valor_valor";
+            this.valor_valor.ReadOnly = true;
+            this.valor_valor.Width = 75;
+            // 
+            // col_fecha_creacion
+            // 
+            this.col_fecha_creacion.HeaderText = "Fecha Ingreso";
+            this.col_fecha_creacion.MinimumWidth = 6;
+            this.col_fecha_creacion.Name = "col_fecha_creacion";
+            this.col_fecha_creacion.ReadOnly = true;
+            this.col_fecha_creacion.Width = 132;
+            // 
             // FrmEncomiendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -569,24 +515,19 @@
         private System.Windows.Forms.TextBox txtDireccionDestino;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDireccionOrigen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_id_usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_contenido_encomienda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_id_persona;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_numero_documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_id_tipo_documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_tipo_documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_id_rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_nombre_rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_nombre_usuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtContenido;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_identificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_direccion_origen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_direccion_destino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor_valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_fecha_creacion;
     }
 }

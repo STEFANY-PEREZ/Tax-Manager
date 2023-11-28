@@ -29,6 +29,7 @@ namespace Datos.Repositorios
                     command.CommandType = CommandType.StoredProcedure;
 
                     // Ajustar parámetros
+                    command.Parameters.AddWithValue("@Identificacion",entidad.Identificacion);
                     command.Parameters.AddWithValue("@DireccionOrigen", entidad.DireccionOrigen);
                     command.Parameters.AddWithValue("@DireccionDestino", entidad.DireccionDestino);
                     command.Parameters.AddWithValue("@Telefono", entidad.Telefono);
@@ -124,6 +125,7 @@ namespace Datos.Repositorios
                         {
                             Encomienda encomienda = new Encomienda();
                             encomienda.IdViaje = Convert.ToInt32(reader["IdEncomienda"]);
+                            encomienda.Identificacion = Convert.ToInt32(reader["Identificacion"]);
                             encomienda.DireccionOrigen = reader["DireccionOrigen"].ToString();
                             encomienda.DireccionDestino = reader["DireccionDestino"].ToString();
                             encomienda.Telefono = reader["Telefono"].ToString();

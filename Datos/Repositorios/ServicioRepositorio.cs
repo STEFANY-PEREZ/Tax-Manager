@@ -1,13 +1,17 @@
 ﻿using Datos.Conexiones;
+using Datos.Interfaces;
 using Entidad;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Datos.Repositorios
 {
-    public class ServicioRepositorio
+    public class ServicioRepositorio : IRespositorioFactura<Servicio>
     {
         public bool Crear(Servicio servicio)
         {
@@ -38,6 +42,66 @@ namespace Datos.Repositorios
                 // Manejo de errores
                 Console.WriteLine("Error al crear el servicio: " + ex.Message);
                 return false;
+            }
+        }
+
+        public void GenerarFacturaPdf(Servicio servicioSeleccionado)
+        {
+            try
+            {
+                if (servicioSeleccionado != null)
+                {
+                    string pdfPath = $"C:/Users/NosRey/Documents/Visual Studio 2022/pdf/Factura_{servicioSeleccionado.Id}.pdf";
+
+                    using (PdfDocument document = new PdfDocument())
+                    {
+                        PdfPage page = document.AddPage();
+
+                        XGraphics gfx = XGraphics.FromPdfPage(page);
+
+                        XFont fontTitulo = new XFont("Arial", 16, XFontStyle.Bold);
+                        XFont fontNormal = new XFont("Arial", 12, XFontStyle.Regular);
+
+                        XPoint point = new XPoint(30, 30);
+
+                        float columnWidth = 300;
+
+                        DibujarCelda(gfx, "TAX-SERVICES", point, fontTitulo, XBrushes.Black, columnWidth);
+                        point.Y += 30;
+
+                        DibujarCelda(gfx, "TICKET DE SERVICIO", point, fontNormal, XBrushes.Black, columnWidth);
+                        point.Y += 20;
+
+                        DibujarCelda(gfx, $"ID Servicio: {servicioSeleccionado.Id}", point, fontNormal, XBrushes.Black, columnWidth);
+                        point.Y += 20;
+
+                        DibujarCelda(gfx, $"Cliente: {servicioSeleccionado.Cliente.Id}", point, fontNormal, XBrushes.Black, columnWidth);
+                        point.Y += 20;
+
+                        DibujarCelda(gfx, $"Conductor: {servicioSeleccionado.Conductor.Id}", point, fontNormal, XBrushes.Black, columnWidth);
+                        point.Y += 20;
+
+                        DibujarCelda(gfx, $"Dirección Origen: {servicioSeleccionado.DireccionOrigen}", point, fontNormal, XBrushes.Black, columnWidth);
+                        point.Y += 20;
+
+                        DibujarCelda(gfx, $"Dirección Destino: {servicioSeleccionado.DireccionDestino}", point, fontNormal, XBrushes.Black, columnWidth);
+                        point.Y += 20;
+
+                        DibujarCelda(gfx, $"Tarifa: {servicioSeleccionado.Tarifa:C}", point, fontNormal, XBrushes.Black, columnWidth);
+
+                        document.Save(pdfPath);
+
+                        MessageBox.Show($"Factura generada con éxito. Ruta: {pdfPath}", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha seleccionado ningún servicio para generar la factura.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar la factura: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -88,8 +152,15 @@ namespace Datos.Repositorios
                 servicios = new List<Servicio>();
                 throw ex;
             }
-
             return servicios;
+        }
+        
+        public void DibujarCelda(XGraphics gfx, string texto, XPoint point, XFont font, XBrush brush, float width)
+        {
+            gfx.DrawRectangle(XBrushes.Transparent, point.X, point.Y, width, 20);
+            gfx.DrawString(texto, font, brush, new XRect(point.X, point.Y, width, 20), XStringFormats.TopLeft);
+
+            point.X += width;
         }
     }
 }

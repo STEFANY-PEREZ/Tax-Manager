@@ -4,6 +4,7 @@ namespace Entidad
 {
     public class Servicio
     {
+        public Servicio ServicioSeleccionado { get; set; }
         public int Id { get; set; }
         public Cliente Cliente { get; set; }
         public Conductor Conductor { get; set; }

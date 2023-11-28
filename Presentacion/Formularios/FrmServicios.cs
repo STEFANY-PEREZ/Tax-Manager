@@ -11,6 +11,7 @@ namespace Presentacion.Formularios
 {
     public partial class FrmServicios : Form
     {
+        public Servicio ServicioSeleccionado = new Servicio();
         ServiciosServicio ServiciosServicio = new ServiciosServicio();
         Conductor conductorElegido = new Conductor();
         Cliente clienteElegido = new Cliente();
@@ -165,14 +166,14 @@ namespace Presentacion.Formularios
                 {
                     tabla.Rows.Add(new object[]
                     {
-                servicio.Id,
-                servicio.Cliente.Id,
-                servicio.Conductor.Id,
-                servicio.DireccionOrigen,
-                servicio.DireccionDestino,
-                servicio.Tarifa,
-                servicio.Estado,
-                servicio.FechaCreacion
+                        servicio.Id,
+                        servicio.Cliente.Id,
+                        servicio.Conductor.Id,
+                        servicio.DireccionOrigen,
+                        servicio.DireccionDestino,
+                        servicio.Tarifa,
+                        servicio.Estado,
+                        servicio.FechaCreacion
                     });
                 }
 
@@ -276,15 +277,17 @@ namespace Presentacion.Formularios
                 formulario.ShowDialog();
             }
         }
+        /*               ------------------------------------------------------------              */
         
-        public Servicio ServicioSeleccionado { get; private set; }
 
         private void btnPdf_Click(object sender, EventArgs e)
         {
-            if (ServicioSeleccionado != null)
+            Servicio servicioSeleccionado = ObtenerServicioSeleccionado();
+
+            if (servicioSeleccionado != null)
             {
                 // Llama al método para generar la factura con el servicio seleccionado
-                GenerarFacturaPDF(ServicioSeleccionado);
+                ServiciosServicio.GenerarFacturaPdf(servicioSeleccionado);
             }
             else
             {
@@ -292,88 +295,21 @@ namespace Presentacion.Formularios
                                 "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        public void GenerarFacturaPDF(Servicio servicioSeleccionado)
+
+        /*            -------------------------------------------------------------------                                            */
+        private Servicio ObtenerServicioSeleccionado()
         {
-            try
+            if (tabla.SelectedRows.Count > 0)
             {
-                if (servicioSeleccionado != null)
-                {
-                    string pdfPath = $"C:/Users/NosRey/Documents/Visual Studio 2022/pdf/Factura_{servicioSeleccionado.Id}.pdf";
+                DataGridViewRow selectedRow = tabla.SelectedRows[0];
+                int idServicio = Convert.ToInt32(selectedRow.Cells["col_id_servicio"].Value);
+                int idCliente = Convert.ToInt32(selectedRow.Cells["Id_cliente"].Value);
+                int idConductor = Convert.ToInt32(selectedRow.Cells["id_conductor"].Value);
+                string direccionOrigen = selectedRow.Cells["col_direccion_origen"].Value.ToString();
+                string direccionDestino = selectedRow.Cells["col_direccion_destino"].Value.ToString();
+                decimal tarifa = Convert.ToDecimal(selectedRow.Cells["col_tarifa"].Value);
 
-                    using (PdfDocument document = new PdfDocument())
-                    {
-                        PdfPage page = document.AddPage();
-
-                        XGraphics gfx = XGraphics.FromPdfPage(page);
-
-                        XFont fontTitulo = new XFont("Arial", 16, XFontStyle.Bold);
-                        XFont fontNormal = new XFont("Arial", 12, XFontStyle.Regular);
-
-                        XPoint point = new XPoint(30, 30);
-
-                        float columnWidth = 300;
-
-                        DibujarCelda(gfx, "TAX-SERVICES", point, fontTitulo, XBrushes.Black, columnWidth);
-                        point.Y += 30;
-
-                        DibujarCelda(gfx, "Factura para Servicio", point, fontNormal, XBrushes.Black, columnWidth);
-                        point.Y += 20;
-
-                        DibujarCelda(gfx, $"ID Servicio: {servicioSeleccionado.Id}", point, fontNormal, XBrushes.Black, columnWidth);
-                        point.Y += 20;
-
-                        DibujarCelda(gfx, $"Cliente: {servicioSeleccionado.Cliente.Id}", point, fontNormal, XBrushes.Black, columnWidth);
-                        point.Y += 20;
-
-                        DibujarCelda(gfx, $"Conductor: {servicioSeleccionado.Conductor.Id}", point, fontNormal, XBrushes.Black, columnWidth);
-                        point.Y += 20;
-
-                        DibujarCelda(gfx, $"Dirección Origen: {servicioSeleccionado.DireccionOrigen}", point, fontNormal, XBrushes.Black, columnWidth);
-                        point.Y += 20;
-
-                        DibujarCelda(gfx, $"Dirección Destino: {servicioSeleccionado.DireccionDestino}", point, fontNormal, XBrushes.Black, columnWidth);
-                        point.Y += 20;
-
-                        DibujarCelda(gfx, $"Tarifa: {servicioSeleccionado.Tarifa:C}", point, fontNormal, XBrushes.Black, columnWidth);
-
-                        document.Save(pdfPath);
-
-                        MessageBox.Show($"Factura generada con éxito. Ruta: {pdfPath}", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No se ha seleccionado ningún servicio para generar la factura.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al generar la factura: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void DibujarCelda(XGraphics gfx, string texto, XPoint point, XFont font, XBrush brush, float width)
-        {
-            gfx.DrawRectangle(XBrushes.Transparent, point.X, point.Y, width, 20);
-            gfx.DrawString(texto, font, brush, new XRect(point.X, point.Y, width, 20), XStringFormats.TopLeft);
-
-            point.X += width;
-        }
-        private void tabla_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                // Obtén el índice de la fila seleccionada
-                int selectedRowIndex = e.RowIndex;
-
-                // Obtén los datos de la fila seleccionada y asigna a ServicioSeleccionado
-                int idServicio = Convert.ToInt32(tabla.Rows[selectedRowIndex].Cells["col_id_servicio"].Value);
-                int idCliente = Convert.ToInt32(tabla.Rows[selectedRowIndex].Cells["Id_cliente"].Value);
-                int idConductor = Convert.ToInt32(tabla.Rows[selectedRowIndex].Cells["id_conductor"].Value);
-                string direccionOrigen = tabla.Rows[selectedRowIndex].Cells["col_direccion_origen"].Value.ToString();
-                string direccionDestino = tabla.Rows[selectedRowIndex].Cells["col_direccion_destino"].Value.ToString();
-                decimal tarifa = Convert.ToDecimal(tabla.Rows[selectedRowIndex].Cells["col_tarifa"].Value);
-
-                ServicioSeleccionado = new Servicio
+                return new Servicio
                 {
                     Id = idServicio,
                     Cliente = new Cliente { Id = idCliente },
@@ -384,6 +320,14 @@ namespace Presentacion.Formularios
                 };
             }
 
+            return null;
+        }
+        private void tabla_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                ServicioSeleccionado = ObtenerServicioSeleccionado();
+            }
         }
     }
 }

@@ -505,7 +505,7 @@
             this.btnPdf.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnPdf.Size = new System.Drawing.Size(79, 30);
             this.btnPdf.TabIndex = 456;
-            this.btnPdf.Text = "PDF";
+            this.btnPdf.Text = "Ticket";
             this.btnPdf.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnPdf.UseVisualStyleBackColor = false;
             this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);

@@ -161,12 +161,13 @@ namespace Presentacion.Formularios
                     tabla.Rows.Add(new object[]
                     {
                         viaje.IdViaje,
+                        viaje.Identificacion,
                         viaje.DireccionOrigen,
-                        viaje.Valor,
                         viaje.DireccionDestino,
                         viaje.Telefono,
-                        viaje.FechaCreacion,
-                        viaje.Tipo
+                        viaje.Tipo,
+                        viaje.Valor,
+                        viaje.FechaCreacion
                     });
                 }
                 tabla.ClearSelection();
@@ -184,7 +185,7 @@ namespace Presentacion.Formularios
             {
                 IdEncomienda = tipoEncomiendas.IdEncomienda
             };
-            Viajes.Identificacion = txtCedula.Text;
+            Viajes.Identificacion = Convert.ToInt32(txtCedula.Text);
             Viajes.DireccionOrigen = txtDireccionOrigen.Text;
             Viajes.DireccionDestino = txtDireccionDestino.Text;
             Viajes.Tipo = boxTipo.Text;
@@ -217,6 +218,7 @@ namespace Presentacion.Formularios
             txtTelefono.Clear();
             txtValor.Clear();
             txtContenido.Clear();
+            txtCedula.Clear();
         }
 
         private void RestablecerColoresTextBox()

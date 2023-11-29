@@ -297,5 +297,42 @@ namespace Presentacion.Formularios
                 e.Handled = true; // Bloquea cualquier entrada que no sea un número o tecla de control
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FiltrarDataGridView(tabla, txtFiltro, btnBuscar);
+        }
+        private void FiltrarDataGridView(DataGridView dataGridView, TextBox textBox, Button buscarButton)
+        {
+            buscarButton.Click += (sender, e) =>
+            {
+                string filtro = textBox.Text; // Obtener el texto del TextBox
+
+                // Iterar sobre las filas del DataGridView y ocultar aquellas que no cumplan con el filtro
+                foreach (DataGridViewRow row in dataGridView.Rows)
+                {
+                    bool coincide = false;
+
+                    // Iterar sobre las celdas de cada fila y verificar si alguna coincide con el filtro
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.Value != null && cell.Value.ToString().IndexOf(filtro, StringComparison.OrdinalIgnoreCase) >= 0)
+                        {
+                            coincide = true;
+                            break;
+                        }
+                    }
+
+                    // Mostrar u ocultar la fila según si coincide con el filtro
+                    row.Visible = coincide;
+                }
+            };
+        }
+
+        private void btnRestaurar_Click(object sender, EventArgs e)
+        {
+            txtFiltro.Clear();
+            ListarViajes();
+        }
     }
 }

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Datos.Repositorios
@@ -51,8 +52,17 @@ namespace Datos.Repositorios
             {
                 if (servicioSeleccionado != null)
                 {
-                    string pdfPath = $"C:/Users/NosRey/Documents/Visual Studio 2022/pdf/Factura_{servicioSeleccionado.Id}.pdf";
+                    string pdfDirectory = Path.Combine(
+                         Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                         "pdf");
 
+                    // Verificar si el directorio existe, si no, crearlo
+                    if (!Directory.Exists(pdfDirectory))
+                    {
+                        Directory.CreateDirectory(pdfDirectory);
+                    }
+
+                    string pdfPath = Path.Combine(pdfDirectory, $"Ticket_{servicioSeleccionado.Id}.pdf");
                     using (PdfDocument document = new PdfDocument())
                     {
                         PdfPage page = document.AddPage();
@@ -91,17 +101,17 @@ namespace Datos.Repositorios
 
                         document.Save(pdfPath);
 
-                        MessageBox.Show($"Factura generada con éxito. Ruta: {pdfPath}", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Tickey generado con éxito. Ruta: {pdfPath}", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No se ha seleccionado ningún servicio para generar la factura.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No se ha seleccionado ningún servicio para generar el Ticket.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al generar la factura: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al generar el Ticket: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

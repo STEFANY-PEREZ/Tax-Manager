@@ -261,7 +261,7 @@
             this.txtFiltro.Location = new System.Drawing.Point(12, 516);
             this.txtFiltro.MaxLength = 15;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(150, 27);
+            this.txtFiltro.Size = new System.Drawing.Size(150, 30);
             this.txtFiltro.TabIndex = 434;
             // 
             // groupBox2
@@ -304,7 +304,7 @@
             this.label7.ForeColor = System.Drawing.Color.DimGray;
             this.label7.Location = new System.Drawing.Point(5, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(141, 19);
+            this.label7.Size = new System.Drawing.Size(171, 23);
             this.label7.TabIndex = 7;
             this.label7.Text = "Nombre completo:";
             // 
@@ -316,7 +316,7 @@
             this.txtNombreCompletoConductor.MaxLength = 15;
             this.txtNombreCompletoConductor.Name = "txtNombreCompletoConductor";
             this.txtNombreCompletoConductor.ReadOnly = true;
-            this.txtNombreCompletoConductor.Size = new System.Drawing.Size(284, 27);
+            this.txtNombreCompletoConductor.Size = new System.Drawing.Size(284, 30);
             this.txtNombreCompletoConductor.TabIndex = 6;
             // 
             // groupBox1
@@ -359,7 +359,7 @@
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(5, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 19);
+            this.label1.Size = new System.Drawing.Size(171, 23);
             this.label1.TabIndex = 7;
             this.label1.Text = "Nombre completo:";
             // 
@@ -371,7 +371,7 @@
             this.txtNombreCompletoCliente.MaxLength = 15;
             this.txtNombreCompletoCliente.Name = "txtNombreCompletoCliente";
             this.txtNombreCompletoCliente.ReadOnly = true;
-            this.txtNombreCompletoCliente.Size = new System.Drawing.Size(284, 27);
+            this.txtNombreCompletoCliente.Size = new System.Drawing.Size(284, 30);
             this.txtNombreCompletoCliente.TabIndex = 6;
             // 
             // label2
@@ -379,7 +379,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(209, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 19);
+            this.label2.Size = new System.Drawing.Size(156, 23);
             this.label2.TabIndex = 449;
             this.label2.Text = "Direción destino:";
             // 
@@ -388,7 +388,7 @@
             this.txtDirDestino.Location = new System.Drawing.Point(212, 110);
             this.txtDirDestino.MaxLength = 15;
             this.txtDirDestino.Name = "txtDirDestino";
-            this.txtDirDestino.Size = new System.Drawing.Size(194, 27);
+            this.txtDirDestino.Size = new System.Drawing.Size(194, 30);
             this.txtDirDestino.TabIndex = 448;
             // 
             // label3
@@ -396,7 +396,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 91);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 19);
+            this.label3.Size = new System.Drawing.Size(157, 23);
             this.label3.TabIndex = 447;
             this.label3.Text = "Dirección origen:";
             // 
@@ -405,7 +405,7 @@
             this.txtDirOrigen.Location = new System.Drawing.Point(12, 110);
             this.txtDirOrigen.MaxLength = 15;
             this.txtDirOrigen.Name = "txtDirOrigen";
-            this.txtDirOrigen.Size = new System.Drawing.Size(194, 27);
+            this.txtDirOrigen.Size = new System.Drawing.Size(194, 30);
             this.txtDirOrigen.TabIndex = 446;
             // 
             // label4
@@ -413,7 +413,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(407, 91);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 19);
+            this.label4.Size = new System.Drawing.Size(65, 23);
             this.label4.TabIndex = 451;
             this.label4.Text = "Tarifa:";
             // 
@@ -422,8 +422,9 @@
             this.txtTarifa.Location = new System.Drawing.Point(410, 110);
             this.txtTarifa.MaxLength = 15;
             this.txtTarifa.Name = "txtTarifa";
-            this.txtTarifa.Size = new System.Drawing.Size(120, 27);
+            this.txtTarifa.Size = new System.Drawing.Size(120, 30);
             this.txtTarifa.TabIndex = 450;
+            this.txtTarifa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTarifa_KeyPress);
             // 
             // btnCancelar
             // 
@@ -486,7 +487,7 @@
             this.txtIdServicio.ForeColor = System.Drawing.Color.Black;
             this.txtIdServicio.Location = new System.Drawing.Point(825, 108);
             this.txtIdServicio.Name = "txtIdServicio";
-            this.txtIdServicio.Size = new System.Drawing.Size(22, 27);
+            this.txtIdServicio.Size = new System.Drawing.Size(22, 30);
             this.txtIdServicio.TabIndex = 455;
             this.txtIdServicio.Text = "0";
             this.txtIdServicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -512,7 +513,7 @@
             // 
             // FrmServicios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 551);
             this.Controls.Add(this.btnPdf);

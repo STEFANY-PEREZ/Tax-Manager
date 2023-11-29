@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -38,6 +38,14 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.tabla = new System.Windows.Forms.DataGridView();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_direccion_origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_direccion_destino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -56,14 +64,6 @@
             this.txtContenido = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
-            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_direccion_origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_direccion_destino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor_valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +90,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(35, 89);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 19);
+            this.label10.Size = new System.Drawing.Size(90, 23);
             this.label10.TabIndex = 455;
             this.label10.Text = "Telefono:";
             // 
@@ -99,8 +99,9 @@
             this.txtTelefono.Location = new System.Drawing.Point(38, 108);
             this.txtTelefono.MaxLength = 15;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(143, 27);
+            this.txtTelefono.Size = new System.Drawing.Size(143, 30);
             this.txtTelefono.TabIndex = 454;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // btnRestaurar
             // 
@@ -136,7 +137,7 @@
             this.txtIdUsuario.ForeColor = System.Drawing.Color.Black;
             this.txtIdUsuario.Location = new System.Drawing.Point(11, 112);
             this.txtIdUsuario.Name = "txtIdUsuario";
-            this.txtIdUsuario.Size = new System.Drawing.Size(22, 27);
+            this.txtIdUsuario.Size = new System.Drawing.Size(22, 30);
             this.txtIdUsuario.TabIndex = 451;
             this.txtIdUsuario.Text = "0";
             this.txtIdUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -152,14 +153,14 @@
             this.tabla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.tabla.BackgroundColor = System.Drawing.Color.Silver;
             this.tabla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_id,
@@ -170,30 +171,94 @@
             this.col_tipo,
             this.valor_valor,
             this.col_fecha_creacion});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tabla.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tabla.DefaultCellStyle = dataGridViewCellStyle5;
             this.tabla.Location = new System.Drawing.Point(11, 144);
             this.tabla.Name = "tabla";
             this.tabla.ReadOnly = true;
             this.tabla.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(103)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(103)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.tabla.RowHeadersWidth = 20;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla.Size = new System.Drawing.Size(835, 357);
             this.tabla.TabIndex = 450;
+            // 
+            // col_id
+            // 
+            this.col_id.HeaderText = "ID";
+            this.col_id.MinimumWidth = 6;
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            this.col_id.Width = 66;
+            // 
+            // col_identificacion
+            // 
+            this.col_identificacion.HeaderText = "Identificacion";
+            this.col_identificacion.MinimumWidth = 6;
+            this.col_identificacion.Name = "col_identificacion";
+            this.col_identificacion.ReadOnly = true;
+            this.col_identificacion.Width = 160;
+            // 
+            // col_direccion_origen
+            // 
+            this.col_direccion_origen.HeaderText = "Direccion Origen";
+            this.col_direccion_origen.MinimumWidth = 6;
+            this.col_direccion_origen.Name = "col_direccion_origen";
+            this.col_direccion_origen.ReadOnly = true;
+            this.col_direccion_origen.Width = 176;
+            // 
+            // col_direccion_destino
+            // 
+            this.col_direccion_destino.HeaderText = "Direccion Destino";
+            this.col_direccion_destino.MinimumWidth = 6;
+            this.col_direccion_destino.Name = "col_direccion_destino";
+            this.col_direccion_destino.ReadOnly = true;
+            this.col_direccion_destino.Width = 182;
+            // 
+            // col_telefono
+            // 
+            this.col_telefono.HeaderText = "Telefono";
+            this.col_telefono.MinimumWidth = 6;
+            this.col_telefono.Name = "col_telefono";
+            this.col_telefono.ReadOnly = true;
+            this.col_telefono.Width = 120;
+            // 
+            // col_tipo
+            // 
+            this.col_tipo.HeaderText = "Tipo";
+            this.col_tipo.MinimumWidth = 6;
+            this.col_tipo.Name = "col_tipo";
+            this.col_tipo.ReadOnly = true;
+            this.col_tipo.Width = 83;
+            // 
+            // valor_valor
+            // 
+            this.valor_valor.HeaderText = "Valor";
+            this.valor_valor.MinimumWidth = 6;
+            this.valor_valor.Name = "valor_valor";
+            this.valor_valor.ReadOnly = true;
+            this.valor_valor.Width = 91;
+            // 
+            // col_fecha_creacion
+            // 
+            this.col_fecha_creacion.HeaderText = "Fecha Ingreso";
+            this.col_fecha_creacion.MinimumWidth = 6;
+            this.col_fecha_creacion.Name = "col_fecha_creacion";
+            this.col_fecha_creacion.ReadOnly = true;
+            this.col_fecha_creacion.Width = 158;
             // 
             // btnCancelar
             // 
@@ -236,7 +301,7 @@
             this.txtFiltro.Location = new System.Drawing.Point(11, 514);
             this.txtFiltro.MaxLength = 15;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(150, 27);
+            this.txtFiltro.Size = new System.Drawing.Size(150, 30);
             this.txtFiltro.TabIndex = 447;
             // 
             // btnLimpiar
@@ -263,7 +328,7 @@
             this.lblTitutloFormulario.ForeColor = System.Drawing.Color.Black;
             this.lblTitutloFormulario.Location = new System.Drawing.Point(6, 0);
             this.lblTitutloFormulario.Name = "lblTitutloFormulario";
-            this.lblTitutloFormulario.Size = new System.Drawing.Size(304, 30);
+            this.lblTitutloFormulario.Size = new System.Drawing.Size(367, 35);
             this.lblTitutloFormulario.TabIndex = 445;
             this.lblTitutloFormulario.Text = "Gestor de Encomiendas:";
             // 
@@ -291,7 +356,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(501, 35);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 19);
+            this.label8.Size = new System.Drawing.Size(86, 23);
             this.label8.TabIndex = 444;
             this.label8.Text = "Tamaño:";
             // 
@@ -301,7 +366,7 @@
             this.boxTipo.FormattingEnabled = true;
             this.boxTipo.Location = new System.Drawing.Point(501, 54);
             this.boxTipo.Name = "boxTipo";
-            this.boxTipo.Size = new System.Drawing.Size(150, 27);
+            this.boxTipo.Size = new System.Drawing.Size(150, 31);
             this.boxTipo.TabIndex = 440;
             // 
             // label5
@@ -309,7 +374,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(341, 35);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(145, 19);
+            this.label5.Size = new System.Drawing.Size(169, 23);
             this.label5.TabIndex = 441;
             this.label5.Text = "Dirección Destino:";
             // 
@@ -318,7 +383,7 @@
             this.txtDireccionDestino.Location = new System.Drawing.Point(344, 54);
             this.txtDireccionDestino.MaxLength = 15;
             this.txtDireccionDestino.Name = "txtDireccionDestino";
-            this.txtDireccionDestino.Size = new System.Drawing.Size(151, 27);
+            this.txtDireccionDestino.Size = new System.Drawing.Size(151, 30);
             this.txtDireccionDestino.TabIndex = 437;
             // 
             // label3
@@ -326,7 +391,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(184, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 19);
+            this.label3.Size = new System.Drawing.Size(162, 23);
             this.label3.TabIndex = 439;
             this.label3.Text = "Dirección Origen:";
             // 
@@ -335,7 +400,7 @@
             this.txtDireccionOrigen.Location = new System.Drawing.Point(187, 54);
             this.txtDireccionOrigen.MaxLength = 15;
             this.txtDireccionOrigen.Name = "txtDireccionOrigen";
-            this.txtDireccionOrigen.Size = new System.Drawing.Size(151, 27);
+            this.txtDireccionOrigen.Size = new System.Drawing.Size(151, 30);
             this.txtDireccionOrigen.TabIndex = 436;
             // 
             // label1
@@ -343,7 +408,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(34, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 19);
+            this.label1.Size = new System.Drawing.Size(149, 23);
             this.label1.TabIndex = 458;
             this.label1.Text = "Ingrese Cedula:";
             // 
@@ -352,15 +417,16 @@
             this.txtCedula.Location = new System.Drawing.Point(34, 54);
             this.txtCedula.MaxLength = 15;
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(147, 27);
+            this.txtCedula.Size = new System.Drawing.Size(147, 30);
             this.txtCedula.TabIndex = 459;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(340, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 19);
+            this.label2.Size = new System.Drawing.Size(104, 23);
             this.label2.TabIndex = 460;
             this.label2.Text = "Contenido:";
             // 
@@ -369,7 +435,7 @@
             this.txtContenido.Location = new System.Drawing.Point(344, 108);
             this.txtContenido.MaxLength = 15;
             this.txtContenido.Name = "txtContenido";
-            this.txtContenido.Size = new System.Drawing.Size(307, 27);
+            this.txtContenido.Size = new System.Drawing.Size(307, 30);
             this.txtContenido.TabIndex = 461;
             // 
             // label4
@@ -377,7 +443,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(187, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 19);
+            this.label4.Size = new System.Drawing.Size(61, 23);
             this.label4.TabIndex = 462;
             this.label4.Text = "Valor:";
             // 
@@ -386,76 +452,13 @@
             this.txtValor.Location = new System.Drawing.Point(187, 108);
             this.txtValor.MaxLength = 15;
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(151, 27);
+            this.txtValor.Size = new System.Drawing.Size(151, 30);
             this.txtValor.TabIndex = 463;
-            // 
-            // col_id
-            // 
-            this.col_id.HeaderText = "ID";
-            this.col_id.MinimumWidth = 6;
-            this.col_id.Name = "col_id";
-            this.col_id.ReadOnly = true;
-            this.col_id.Width = 55;
-            // 
-            // col_identificacion
-            // 
-            this.col_identificacion.HeaderText = "Identificacion";
-            this.col_identificacion.MinimumWidth = 6;
-            this.col_identificacion.Name = "col_identificacion";
-            this.col_identificacion.ReadOnly = true;
-            this.col_identificacion.Width = 136;
-            // 
-            // col_direccion_origen
-            // 
-            this.col_direccion_origen.HeaderText = "Direccion Origen";
-            this.col_direccion_origen.MinimumWidth = 6;
-            this.col_direccion_origen.Name = "col_direccion_origen";
-            this.col_direccion_origen.ReadOnly = true;
-            this.col_direccion_origen.Width = 149;
-            // 
-            // col_direccion_destino
-            // 
-            this.col_direccion_destino.HeaderText = "Direccion Destino";
-            this.col_direccion_destino.MinimumWidth = 6;
-            this.col_direccion_destino.Name = "col_direccion_destino";
-            this.col_direccion_destino.ReadOnly = true;
-            this.col_direccion_destino.Width = 155;
-            // 
-            // col_telefono
-            // 
-            this.col_telefono.HeaderText = "Telefono";
-            this.col_telefono.MinimumWidth = 6;
-            this.col_telefono.Name = "col_telefono";
-            this.col_telefono.ReadOnly = true;
-            this.col_telefono.Width = 98;
-            // 
-            // col_tipo
-            // 
-            this.col_tipo.HeaderText = "Tipo";
-            this.col_tipo.MinimumWidth = 6;
-            this.col_tipo.Name = "col_tipo";
-            this.col_tipo.ReadOnly = true;
-            this.col_tipo.Width = 68;
-            // 
-            // valor_valor
-            // 
-            this.valor_valor.HeaderText = "Valor";
-            this.valor_valor.MinimumWidth = 6;
-            this.valor_valor.Name = "valor_valor";
-            this.valor_valor.ReadOnly = true;
-            this.valor_valor.Width = 75;
-            // 
-            // col_fecha_creacion
-            // 
-            this.col_fecha_creacion.HeaderText = "Fecha Ingreso";
-            this.col_fecha_creacion.MinimumWidth = 6;
-            this.col_fecha_creacion.Name = "col_fecha_creacion";
-            this.col_fecha_creacion.ReadOnly = true;
-            this.col_fecha_creacion.Width = 132;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // FrmEncomiendas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 550);
             this.Controls.Add(this.txtValor);

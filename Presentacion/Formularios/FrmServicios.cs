@@ -329,5 +329,13 @@ namespace Presentacion.Formularios
                 ServicioSeleccionado = ObtenerServicioSeleccionado();
             }
         }
+
+        private void txtTarifa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea cualquier entrada que no sea un número o tecla de control
+            }
+        }
     }
 }

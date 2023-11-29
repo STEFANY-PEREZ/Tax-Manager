@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label14 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(545, 41);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(70, 16);
+            this.label14.Size = new System.Drawing.Size(97, 23);
             this.label14.TabIndex = 406;
             this.label14.Text = "Dirección:";
             // 
@@ -80,7 +80,7 @@
             this.txtDireccion.Location = new System.Drawing.Point(548, 60);
             this.txtDireccion.MaxLength = 255;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(174, 23);
+            this.txtDireccion.Size = new System.Drawing.Size(174, 30);
             this.txtDireccion.TabIndex = 405;
             // 
             // label10
@@ -88,7 +88,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(725, 41);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 16);
+            this.label10.Size = new System.Drawing.Size(90, 23);
             this.label10.TabIndex = 403;
             this.label10.Text = "Telefono:";
             // 
@@ -97,8 +97,9 @@
             this.txtTelefono.Location = new System.Drawing.Point(728, 60);
             this.txtTelefono.MaxLength = 15;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(120, 23);
+            this.txtTelefono.Size = new System.Drawing.Size(120, 30);
             this.txtTelefono.TabIndex = 402;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // btnBuscar
             // 
@@ -122,7 +123,7 @@
             this.txtIdCliente.ForeColor = System.Drawing.Color.Black;
             this.txtIdCliente.Location = new System.Drawing.Point(12, 95);
             this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.Size = new System.Drawing.Size(22, 23);
+            this.txtIdCliente.Size = new System.Drawing.Size(22, 30);
             this.txtIdCliente.TabIndex = 399;
             this.txtIdCliente.Text = "0";
             this.txtIdCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -134,7 +135,7 @@
             this.txtFiltro.Location = new System.Drawing.Point(12, 516);
             this.txtFiltro.MaxLength = 15;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(150, 23);
+            this.txtFiltro.Size = new System.Drawing.Size(150, 30);
             this.txtFiltro.TabIndex = 395;
             // 
             // lblTitutloFormulario
@@ -144,7 +145,7 @@
             this.lblTitutloFormulario.ForeColor = System.Drawing.Color.Black;
             this.lblTitutloFormulario.Location = new System.Drawing.Point(12, 9);
             this.lblTitutloFormulario.Name = "lblTitutloFormulario";
-            this.lblTitutloFormulario.Size = new System.Drawing.Size(236, 24);
+            this.lblTitutloFormulario.Size = new System.Drawing.Size(353, 35);
             this.lblTitutloFormulario.TabIndex = 393;
             this.lblTitutloFormulario.Text = "Gestor de conductores:";
             // 
@@ -153,7 +154,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(388, 41);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 16);
+            this.label8.Size = new System.Drawing.Size(183, 23);
             this.label8.TabIndex = 392;
             this.label8.Text = "Tipo de documento:";
             // 
@@ -163,7 +164,7 @@
             this.boxTipoDocumento.FormattingEnabled = true;
             this.boxTipoDocumento.Location = new System.Drawing.Point(392, 60);
             this.boxTipoDocumento.Name = "boxTipoDocumento";
-            this.boxTipoDocumento.Size = new System.Drawing.Size(150, 24);
+            this.boxTipoDocumento.Size = new System.Drawing.Size(150, 31);
             this.boxTipoDocumento.TabIndex = 388;
             // 
             // label7
@@ -171,7 +172,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(263, 42);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 16);
+            this.label7.Size = new System.Drawing.Size(139, 23);
             this.label7.TabIndex = 391;
             this.label7.Text = "N° documento:";
             // 
@@ -180,15 +181,16 @@
             this.txtNumeroDocumento.Location = new System.Drawing.Point(266, 61);
             this.txtNumeroDocumento.MaxLength = 15;
             this.txtNumeroDocumento.Name = "txtNumeroDocumento";
-            this.txtNumeroDocumento.Size = new System.Drawing.Size(120, 23);
+            this.txtNumeroDocumento.Size = new System.Drawing.Size(120, 30);
             this.txtNumeroDocumento.TabIndex = 386;
+            this.txtNumeroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroDocumento_KeyPress);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(137, 42);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 16);
+            this.label5.Size = new System.Drawing.Size(85, 23);
             this.label5.TabIndex = 389;
             this.label5.Text = "Apellido:";
             // 
@@ -197,15 +199,16 @@
             this.txtApellido.Location = new System.Drawing.Point(140, 61);
             this.txtApellido.MaxLength = 15;
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(120, 23);
+            this.txtApellido.Size = new System.Drawing.Size(120, 30);
             this.txtApellido.TabIndex = 385;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(11, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 16);
+            this.label3.Size = new System.Drawing.Size(85, 23);
             this.label3.TabIndex = 387;
             this.label3.Text = "Nombre:";
             // 
@@ -214,8 +217,9 @@
             this.txtNombre.Location = new System.Drawing.Point(14, 61);
             this.txtNombre.MaxLength = 15;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(120, 23);
+            this.txtNombre.Size = new System.Drawing.Size(120, 30);
             this.txtNombre.TabIndex = 384;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // btnCancelar
             // 
@@ -330,14 +334,14 @@
             this.tabla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.tabla.BackgroundColor = System.Drawing.Color.Silver;
             this.tabla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_id_conductor,
@@ -349,26 +353,26 @@
             this.col_tipo_documento,
             this.col_telefono,
             this.col_direccion});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tabla.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tabla.DefaultCellStyle = dataGridViewCellStyle5;
             this.tabla.Location = new System.Drawing.Point(12, 124);
             this.tabla.Name = "tabla";
             this.tabla.ReadOnly = true;
             this.tabla.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(103)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(103)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.tabla.RowHeadersWidth = 20;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla.Size = new System.Drawing.Size(835, 380);
@@ -379,6 +383,7 @@
             // col_id_conductor
             // 
             this.col_id_conductor.HeaderText = "Id conductor";
+            this.col_id_conductor.MinimumWidth = 8;
             this.col_id_conductor.Name = "col_id_conductor";
             this.col_id_conductor.ReadOnly = true;
             this.col_id_conductor.Visible = false;
@@ -386,6 +391,7 @@
             // col_id_persona
             // 
             this.col_id_persona.HeaderText = "Id persona";
+            this.col_id_persona.MinimumWidth = 8;
             this.col_id_persona.Name = "col_id_persona";
             this.col_id_persona.ReadOnly = true;
             this.col_id_persona.Visible = false;
@@ -393,24 +399,28 @@
             // col_nombres
             // 
             this.col_nombres.HeaderText = "Nombres";
+            this.col_nombres.MinimumWidth = 8;
             this.col_nombres.Name = "col_nombres";
             this.col_nombres.ReadOnly = true;
             // 
             // col_apellidos
             // 
             this.col_apellidos.HeaderText = "Apellidos";
+            this.col_apellidos.MinimumWidth = 8;
             this.col_apellidos.Name = "col_apellidos";
             this.col_apellidos.ReadOnly = true;
             // 
             // col_numero_documento
             // 
             this.col_numero_documento.HeaderText = "N° documento";
+            this.col_numero_documento.MinimumWidth = 8;
             this.col_numero_documento.Name = "col_numero_documento";
             this.col_numero_documento.ReadOnly = true;
             // 
             // col_id_tipo_documento
             // 
             this.col_id_tipo_documento.HeaderText = "Id tipo documento";
+            this.col_id_tipo_documento.MinimumWidth = 8;
             this.col_id_tipo_documento.Name = "col_id_tipo_documento";
             this.col_id_tipo_documento.ReadOnly = true;
             this.col_id_tipo_documento.Visible = false;
@@ -418,24 +428,27 @@
             // col_tipo_documento
             // 
             this.col_tipo_documento.HeaderText = "Tipo de documento";
+            this.col_tipo_documento.MinimumWidth = 8;
             this.col_tipo_documento.Name = "col_tipo_documento";
             this.col_tipo_documento.ReadOnly = true;
             // 
             // col_telefono
             // 
             this.col_telefono.HeaderText = "Telefono";
+            this.col_telefono.MinimumWidth = 8;
             this.col_telefono.Name = "col_telefono";
             this.col_telefono.ReadOnly = true;
             // 
             // col_direccion
             // 
             this.col_direccion.HeaderText = "Direccion";
+            this.col_direccion.MinimumWidth = 8;
             this.col_direccion.Name = "col_direccion";
             this.col_direccion.ReadOnly = true;
             // 
             // FrmConductores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 551);
             this.Controls.Add(this.tabla);

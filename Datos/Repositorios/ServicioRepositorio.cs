@@ -172,5 +172,57 @@ namespace Datos.Repositorios
 
             point.X += width;
         }
+
+        public bool Eliminar(int id, out string mensaje)
+        {
+            bool exito = false;
+            mensaje = "";
+
+            // Establecer la conexión a la base de datos
+            using (SqlConnection connection = new SqlConnection(Conexion.CadenaConexionMaestra))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Crear el comando para invocar el procedimiento almacenado
+                    using (SqlCommand command = new SqlCommand("EliminarServicio", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Parámetro de entrada
+                        command.Parameters.AddWithValue("@IdServicio", id);
+
+                        // Parámetros de salida
+                        SqlParameter resultadoParam = new SqlParameter("@Resultado", SqlDbType.Int);
+                        resultadoParam.Direction = ParameterDirection.Output;
+                        command.Parameters.Add(resultadoParam);
+
+                        SqlParameter mensajeParam = new SqlParameter("@Mensaje", SqlDbType.VarChar, 500);
+                        mensajeParam.Direction = ParameterDirection.Output;
+                        command.Parameters.Add(mensajeParam);
+
+                        // Ejecutar el comando
+                        command.ExecuteNonQuery();
+
+                        // Obtener los valores de los parámetros de salida
+                        int resultado = Convert.ToInt32(resultadoParam.Value);
+                        mensaje = Convert.ToString(mensajeParam.Value);
+
+                        if (resultado == 1)
+                        {
+                            exito = true;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejar excepciones si es necesario
+                    mensaje = "Error al eliminar el servicio. " + ex.Message;
+                }
+            }
+
+            return exito;
+        }
     }
 }

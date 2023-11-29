@@ -11,7 +11,7 @@ namespace Presentacion.Formularios
     public partial class FrmConductores : Form
     {
         //Variables
-        private ConductorServicio ConductorServicio = new ConductorServicio();
+        private ServicioServicio ConductorServicio = new ServicioServicio();
         private TipoDocumentoServicio TipoDocumentoServicio = new TipoDocumentoServicio();
 
         Conductor Conductor = new Conductor();

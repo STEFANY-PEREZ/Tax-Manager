@@ -8,7 +8,7 @@ namespace Presentacion.Formularios
 {
     public partial class FrmListarConductores : Form
     {
-        private ConductorServicio ConductorServicio = new ConductorServicio();
+        private ServicioServicio ConductorServicio = new ServicioServicio();
         public Conductor Conductor = new Conductor();
         public Persona Persona = new Persona();
         public TipoDocumento TipoDocumento = new TipoDocumento();

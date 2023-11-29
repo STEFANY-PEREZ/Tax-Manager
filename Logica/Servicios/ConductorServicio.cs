@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Logica.Servicios
 {
-    public class ConductorServicio
+    public class ServicioServicio
     {
         private ConductorRepositorio conductorRepositorio = new ConductorRepositorio();
 

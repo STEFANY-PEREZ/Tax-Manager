@@ -130,7 +130,6 @@ namespace Presentacion.Formularios
                 Id = clienteElegido.Id
             };
 
-            // Asigno los valores a los atributos del vehiculo
             Servicio.Id = Convert.ToInt32(txtIdServicio.Text);
             Servicio.DireccionDestino = txtDirDestino.Text;
             Servicio.DireccionOrigen = txtDirOrigen.Text;
@@ -335,6 +334,59 @@ namespace Presentacion.Formularios
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true; // Bloquea cualquier entrada que no sea un número o tecla de control
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+            ListarServicios();
+        }
+        private void Eliminar()
+        {
+            try
+            {
+                if (tabla.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("No se ha seleccionado ningún servicio para eliminar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Obtener el valor de la columna col_id_servicio de la fila seleccionada
+                int idServicio = Convert.ToInt32(tabla.SelectedRows[0].Cells["col_id_servicio"].Value);
+
+                DialogResult dialogo = MessageBox.Show("¿Está seguro que desea eliminar el servicio?",
+                    "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogo == DialogResult.Yes)
+                {
+                    Servicio servicioEliminar = new Servicio()
+                    {
+                        Id = idServicio
+                    };
+
+                    string mensaje;
+                    bool eliminado = ServiciosServicio.Eliminar(servicioEliminar.Id, out mensaje);
+
+                    if (eliminado)
+                    {
+                        tabla.Enabled = true;
+                        btnLimpiar.Enabled = true;
+                        btnEliminar.Enabled = true;
+                        LimpiarFormulario();
+                        btnGuardar.Text = "Guardar";
+                        id = 0;
+                        MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

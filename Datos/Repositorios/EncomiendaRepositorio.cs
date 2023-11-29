@@ -72,7 +72,7 @@ namespace Datos.Repositorios
                         command.CommandType = CommandType.StoredProcedure;
 
                         // Parámetro de entrada
-                        command.Parameters.AddWithValue("@IdViajes", id);
+                        command.Parameters.AddWithValue("@IdEncomienda", id);
 
                         // Parámetros de salida
                         SqlParameter resultadoParam = new SqlParameter("@Resultado", SqlDbType.Int);

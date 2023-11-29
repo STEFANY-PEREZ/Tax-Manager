@@ -111,18 +111,18 @@ namespace Presentacion.Formularios
 
                 if (idUsuario != 0)
                 {
-                    DialogResult dialogo = MessageBox.Show($"¿Está seguro que desea eliminar el viaje'?",
+                    DialogResult dialogo = MessageBox.Show($"¿Está seguro que desea eliminar Encomienda'?",
                         "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (dialogo == DialogResult.Yes)
                     {
-                        Vehiculo vehiculoEliminar = new Vehiculo()
+                        Encomienda encomiendaEliminar = new Encomienda()
                         {
-                            Id = idUsuario
+                            IdViaje = idUsuario
                         };
 
                         string mensaje;
-                        bool eliminado = ViajesServicio.Eliminar(vehiculoEliminar.Id, out mensaje);
+                        bool eliminado = ViajesServicio.Eliminar(encomiendaEliminar.IdViaje, out mensaje);
 
                         if (eliminado)
                         {
@@ -131,7 +131,7 @@ namespace Presentacion.Formularios
                             btnEliminar.Enabled = true;
                             RestablecerColoresTextBox();
                             LimpiarFormulario();
-                            lblTitutloFormulario.Text = "Crear Viaje:";
+                            lblTitutloFormulario.Text = "Crear Encomienda:";
                             btnGuardar.Text = "Guardar";
                             id = 0;
                             MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);

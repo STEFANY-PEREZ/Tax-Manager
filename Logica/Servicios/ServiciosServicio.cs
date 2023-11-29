@@ -23,5 +23,10 @@ namespace Logica.Servicios
         {
             return servicioRepositorio.Listar();
         }
+        public bool Eliminar(int id, out string mensaje)
+        {
+            return servicioRepositorio.Eliminar(id, out mensaje);
+        }
+        
     }
 }

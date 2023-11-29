@@ -14,5 +14,6 @@ namespace Datos.Interfaces
         void GenerarFacturaPdf(Servicio servicioSeleccionado);
 
         List<T> Listar();
+        bool Eliminar(int id, out string mensaje);
     }
 }

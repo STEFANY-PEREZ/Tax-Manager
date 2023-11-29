@@ -4,6 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Data;
+using System.IO;
+using ClosedXML.Excel;
 
 namespace Presentacion.Formularios
 {
@@ -268,8 +271,56 @@ namespace Presentacion.Formularios
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            GenerarReporte(new Reportes.Formularios.FrmReporteViajesActivos());
+            //GenerarReporte(new Reportes.Formularios.FrmReporteViajesActivos());
+            ExportarDataGridViewAExcel(tabla);
+
         }
+        private void ExportarDataGridViewAExcel(DataGridView dataGridView)
+        {
+            try
+            {
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+                    saveFileDialog.Filter = "Archivos de Excel|*.xlsx";
+                    saveFileDialog.Title = "Guardar como archivo de Excel";
+                    saveFileDialog.FileName = "InformeEncomiendas";
+
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        using (var workbook = new XLWorkbook())
+                        {
+                            var worksheet = workbook.Worksheets.Add("Encomiendas");
+
+                            // Agregar encabezados de columna
+                            for (int i = 1; i <= dataGridView.Columns.Count; i++)
+                            {
+                                worksheet.Cell(1, i).Value = dataGridView.Columns[i - 1].HeaderText;
+                            }
+
+                            // Agregar datos
+                            for (int i = 0; i < dataGridView.Rows.Count; i++)
+                            {
+                                for (int j = 0; j < dataGridView.Columns.Count; j++)
+                                {
+                                    worksheet.Cell(i + 2, j + 1).Value = dataGridView.Rows[i].Cells[j].Value.ToString();
+                                }
+                            }
+
+                            workbook.SaveAs(saveFileDialog.FileName);
+                        }
+
+                        MessageBox.Show("Exportación exitosa.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al exportar a Excel. Detalles: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
 
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {

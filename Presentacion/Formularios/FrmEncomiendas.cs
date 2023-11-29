@@ -277,13 +277,14 @@ namespace Presentacion.Formularios
         }
         private void ExportarDataGridViewAExcel(DataGridView dataGridView)
         {
+            int idEncomienda = Convert.ToInt32(tabla.SelectedRows[0].Cells["col_id"].Value);
             try
             {
                 using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                 {
                     saveFileDialog.Filter = "Archivos de Excel|*.xlsx";
                     saveFileDialog.Title = "Guardar como archivo de Excel";
-                    saveFileDialog.FileName = "InformeEncomiendas";
+                    saveFileDialog.FileName = $"InformeEncomiendas{idEncomienda}";
 
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -318,10 +319,6 @@ namespace Presentacion.Formularios
                 MessageBox.Show($"Error al exportar a Excel. Detalles: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))

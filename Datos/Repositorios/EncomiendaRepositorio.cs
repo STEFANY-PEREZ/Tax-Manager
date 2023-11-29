@@ -67,7 +67,7 @@ namespace Datos.Repositorios
                     connection.Open();
 
                     // Crear el comando para invocar el procedimiento almacenado
-                    using (SqlCommand command = new SqlCommand("EliminarViajes", connection))
+                    using (SqlCommand command = new SqlCommand("EliminarEncomiendas", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 

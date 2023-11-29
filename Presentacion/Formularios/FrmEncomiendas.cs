@@ -101,45 +101,41 @@ namespace Presentacion.Formularios
         {
             try
             {
-                if (tabla.Rows.Count < 1)
+                if (tabla.SelectedRows.Count == 0)
                 {
-                    MessageBox.Show("No existen registros para eliminar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No se ha seleccionado ningún servicio para eliminar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                int idUsuario = Convert.ToInt32(txtIdUsuario.Text);
+                // Obtener el valor de la columna col_id_servicio de la fila seleccionada
+                int idEncomienda = Convert.ToInt32(tabla.SelectedRows[0].Cells["col_id"].Value);
 
-                if (idUsuario != 0)
+                DialogResult dialogo = MessageBox.Show("¿Está seguro que desea eliminar el servicio?",
+                    "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogo == DialogResult.Yes)
                 {
-                    DialogResult dialogo = MessageBox.Show($"¿Está seguro que desea eliminar Encomienda'?",
-                        "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (dialogo == DialogResult.Yes)
+                    Encomienda encomiendaEliminar = new Encomienda()
                     {
-                        Encomienda encomiendaEliminar = new Encomienda()
-                        {
-                            IdViaje = idUsuario
-                        };
+                        IdViaje = idEncomienda
+                    };
 
-                        string mensaje;
-                        bool eliminado = ViajesServicio.Eliminar(encomiendaEliminar.IdViaje, out mensaje);
+                    string mensaje;
+                    bool eliminado = ViajesServicio.Eliminar(encomiendaEliminar.IdViaje, out mensaje);
 
-                        if (eliminado)
-                        {
-                            tabla.Enabled = true;
-                            btnLimpiar.Enabled = true;
-                            btnEliminar.Enabled = true;
-                            RestablecerColoresTextBox();
-                            LimpiarFormulario();
-                            lblTitutloFormulario.Text = "Crear Encomienda:";
-                            btnGuardar.Text = "Guardar";
-                            id = 0;
-                            MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                    if (eliminado)
+                    {
+                        tabla.Enabled = true;
+                        btnLimpiar.Enabled = true;
+                        btnEliminar.Enabled = true;
+                        LimpiarFormulario();
+                        btnGuardar.Text = "Guardar";
+                        id = 0;
+                        MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -267,6 +263,7 @@ namespace Presentacion.Formularios
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             Eliminar();
+            ListarViajes();
         }
 
         private void btnReporte_Click(object sender, EventArgs e)
